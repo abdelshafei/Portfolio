@@ -11,15 +11,28 @@ export class HomeComponent {
   displayAuthorName = signal('');
   private indexAuthor: number = 0;
 
-  private interestList: string[] = ["Full Stack Web Applications", "Embedded systems", "making things work on the edge!"];
+  private phrases = [
+    'Full Stack Web Applications',
+    'Embedded Systems',
+    'Making things work on the edge!'
+  ];
   displayInterest = signal('');
-  private indexInterestChar: number = 0;
-  private InterestIndex: number = 0;
-  private TypedOut: boolean = false;
+  private currentPhraseIndex = 0;
+  private charIndex = 0;
+  private isDeleting = false;
+  private timeoutId: number | null = null;
 
   ngOnInit(): void {
     this.typeNextCharAuth(); 
     this.indexAuthor = 0;
+
+    this.typeNextCharinterest();
+  }
+
+  ngOnDestroy(): void {
+    if (this.timeoutId) {
+      clearTimeout(this.timeoutId);
+    }
   }
 
   private typeNextCharAuth() {
@@ -32,17 +45,26 @@ export class HomeComponent {
     }
   }
 
-  private typeNextCharinterest() {
-    if (this.indexInterestChar < this.interestList[this.InterestIndex].length) {
-      setTimeout(() => {
-        this.displayAuthorName.set(this.displayAuthorName() + this.AuthorName[this.indexInterestChar]);
-        this.indexAuthor++;
-        this.typeNextCharAuth();
-      }, 100);
+  private typeNextCharinterest(): void {
+    const currentPhrase = this.phrases[this.currentPhraseIndex];
+
+    if (this.isDeleting) {
+      this.displayInterest.set(currentPhrase.substring(0, this.charIndex--));
+    } else {
+      this.displayInterest.set(currentPhrase.substring(0, this.charIndex++));
     }
 
-    if (this.indexInterestChar === this.AuthorName.length) {
+    let delay = this.isDeleting ? 60 : 120;
 
+    if (!this.isDeleting && this.charIndex === currentPhrase.length + 1) {
+      delay = 1500; // pause before deleting
+      this.isDeleting = true;
+    } else if (this.isDeleting && this.charIndex === 0) {
+      this.isDeleting = false;
+      this.currentPhraseIndex = (this.currentPhraseIndex + 1) % this.phrases.length;
+      delay = 400; // pause before typing next
     }
+
+    this.timeoutId = window.setTimeout(() => this.typeNextCharinterest(), delay);
   }
 }
