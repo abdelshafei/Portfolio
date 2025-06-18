@@ -19,7 +19,7 @@ export class NavComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.isBrowser) {
-      this.isMobile.set(window.innerWidth <= 700);
+      this.isMobile.set(window.innerWidth <= 800);
     }
   }
 
@@ -30,7 +30,7 @@ export class NavComponent implements OnInit {
   @HostListener('window:resize')
   onResize(): void {
     if (this.isBrowser) {
-      this.isMobile.set(window.innerWidth <= 700);
+      this.isMobile.set(window.innerWidth <= 800);
       if (!this.isMobile()) {
         this.menuOpen.set(false); // When not mobile its set to 
       }
