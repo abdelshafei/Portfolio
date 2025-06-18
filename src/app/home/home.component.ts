@@ -59,9 +59,10 @@ export class HomeComponent {
     if (!this.isDeleting && this.charIndex === currentPhrase.length + 1) {
       delay = 1500; // pause before deleting
       this.isDeleting = true;
-    } else if (this.isDeleting && this.charIndex === 0) {
+    } else if (this.isDeleting && this.charIndex === -1) {
       this.isDeleting = false;
       this.currentPhraseIndex = (this.currentPhraseIndex + 1) % this.phrases.length;
+      this.charIndex = 0;
       delay = 400; // pause before typing next
     }
 
