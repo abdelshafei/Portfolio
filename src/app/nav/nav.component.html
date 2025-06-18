@@ -1,0 +1,18 @@
+<nav class="NavigationBar">
+  <div class="nav-content">
+    <a id="Author">Abdelrahman</a>
+
+    <div class="hamburger" (click)="toggleMenu()" [class.open]="menuOpen()" *ngIf="isMobile()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="reflinks" [class.show]="menuOpen()">
+      <a href="#home" class="ref">Home</a>
+      <a href="#timeline" class="ref">Timeline</a>
+      <a href="#projects" class="ref">Projects</a>
+      <a href="#skills" class="ref">Skills</a>
+    </div>
+  </div>
+</nav>
