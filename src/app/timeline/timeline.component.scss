@@ -2,3 +2,33 @@
     background-color: #DBE2E9;
 }
 
+::ng-deep .p-card {
+  position: relative;
+  overflow: hidden;
+}
+
+::ng-deep .p-timeline-event-marker {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 9999px;
+  background-color: #34D399;
+  z-index: 10;
+}
+
+@media (max-width: 800px) {
+  ::ng-deep .p-timeline-event {
+    flex-direction: column !important;
+    align-items: flex-start;
+  }
+
+
+    ::ng-deep .p-timeline-event-connector {
+        position: absolute;
+        top: 0;
+        left: 0.75rem;
+        height: 100%;
+        width: 2px;
+        background-color: #2B2B33;
+        z-index: 1;
+    }
+}
