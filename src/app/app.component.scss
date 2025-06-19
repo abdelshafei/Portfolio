@@ -1,0 +1,36 @@
+.inlineHr-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0; // ensure no extra space
+  gap: 20px;  // gap only between the two lines
+  margin-bottom: 10px;
+}
+
+.inlineHr {
+  height: 0;
+  flex: 1;
+  border: none;
+  border-top: 1px solid black;
+  margin: 0; // removes default browser margin
+}
+
+.gap-space {
+  width: 50px; // or however wide you want the middle gap
+}
+
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.right-footer {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 0.8rem;
+}
+
+.left-footer {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 0.8rem;
+}
