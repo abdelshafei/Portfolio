@@ -1,10 +1,11 @@
 import { Component, signal, effect, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { PLATFORM_ID } from '@angular/core';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [ MatTooltipModule ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

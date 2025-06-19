@@ -40,13 +40,7 @@ export class TimelineComponent {
       color: '#FAFAFA',
       image: 'https://carleton.ca/brand/wp-content/uploads/brand-logo-800w-1.jpg',
       description: `
-      <ul>
-        <li> Leading weekly tutorial sessions designed to reinforce course material, provide in-depth explanations of C++ concepts, and guide students through hands-on problem-solving activities to enhance their understanding and application of programming principles.</li>
-        <br>
-        <li>Leading weekly office hours, explaining core C++ concepts such as object-oriented programming, data structures, and debugging, while providing one-on-one assistance with assignments and troubleshooting code.</li>
-        <br>
-        <li>Evaluating assignments and exams, providing actionable feedback to foster student learning and academic success.</li>
-      </ul>
+      <span> Teaching assistant for Introduction to Software Engineering (COMP2404) under Dr. Darryl Hill. </span>
       `
     },
   ];
