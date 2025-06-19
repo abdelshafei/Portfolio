@@ -8,7 +8,7 @@
 
 
 .greeting {
-  font-size: 26px !important;
+  font-size: 22px !important;
   font-weight: 800;
   display: inline-block;
 }
@@ -18,7 +18,7 @@
   color: black;
   font-weight: 400;
   animation: blink 1s step-end infinite;
-  font-size: 45px !important;
+  font-size: 30px !important;
   font-weight: 200;
   margin-left: 0rem !important;
 }
@@ -117,6 +117,13 @@
 
 @media (max-width: 800px) { 
 
+    .about {
+        padding-left: 12px;
+        padding-right: 12px;
+        margin-top: 20px;
+        position: relative;
+    }
+
     .profile-pic { 
         width: 175px;
         height: 175px;
@@ -136,10 +143,26 @@
         justify-content: center;
     }
 
+    .Paragraphs span {
+        margin-left: 0rem;
+    }
+
     .Home {
         display: inline;
         flex-wrap: wrap;
         justify-items: column;
+    }
+
+    .greeting {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 0rem !important;
+    }
+
+    .greeting .cursor {
+        font-size: 25px;
     }
 
 }
