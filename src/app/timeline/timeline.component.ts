@@ -17,8 +17,8 @@ export class TimelineComponent {
       status: 'Studying in Carleton University',
       startDate: 'Sept 2022',
       endDate: 'Graduation Expected May 2027',
-      color: '#C8102E',
-      image: 'https://cdn.carleton.ca/rds/assets/cu-logos/cu-logo-color-right-horiztonal.svg',
+      color: '#FAFAFA',
+      image: 'https://carleton.ca/brand/wp-content/uploads/brand-logo-800w-1.jpg',
       description: `
       <ul>
         <li> Studying Computer Science with a specialization in Artificial Intelligence and Machine Learning at Carleton University, I’ve spent the past three years immersing myself in both foundational and advanced topics.</li> 
@@ -37,8 +37,8 @@ export class TimelineComponent {
       status: 'Undergraduate Teaching Assistant',
       startDate: 'Jan 2025',
       endDate: 'April 2025',
-      color: '#466D1D',
-      image: 'https://cdn.carleton.ca/rds/assets/cu-logos/cu-logo-color-right-horiztonal.svg',
+      color: '#FAFAFA',
+      image: 'https://carleton.ca/brand/wp-content/uploads/brand-logo-800w-1.jpg',
       description: `
       <ul>
         <li> Leading weekly tutorial sessions designed to reinforce course material, provide in-depth explanations of C++ concepts, and guide students through hands-on problem-solving activities to enhance their understanding and application of programming principles.</li>
