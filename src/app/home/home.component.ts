@@ -18,9 +18,10 @@ export class HomeComponent {
   private indexAuthor: number = 0;
 
   private phrases = [
-    'Full Stack Web Applications',
-    'Embedded Systems',
-    'And learning new tech!'
+    'Full Stack Web Applications.',
+    'Embedded Systems.',
+    'Machine Learning.',
+    'Learning new tech!'
   ];
   displayInterest = signal('');
   private currentPhraseIndex = 0;

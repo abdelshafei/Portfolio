@@ -2,6 +2,18 @@
     background-color: #dee2e6;
 }
 
+.desc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+
+    & span {
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size:xx-large;
+    }
+}
+
 ::ng-deep .p-card {
   border-radius: 1rem;
   padding: 1.5rem;
