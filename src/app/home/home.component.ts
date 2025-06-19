@@ -1,4 +1,6 @@
-import { Component, signal, effect } from '@angular/core';
+import { Component, signal, effect, inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { PLATFORM_ID } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +9,9 @@ import { Component, signal, effect } from '@angular/core';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
+  private platformId = inject(PLATFORM_ID);
+  private isBrowser = isPlatformBrowser(this.platformId);
+
   private AuthorName: string = 'Hi, I\'m Abdelrahman ElShafay!';
   displayAuthorName = signal('');
   private indexAuthor: number = 0;
@@ -14,7 +19,7 @@ export class HomeComponent {
   private phrases = [
     'Full Stack Web Applications',
     'Embedded Systems',
-    'Making things work on the edge!'
+    'And learning new tech!'
   ];
   displayInterest = signal('');
   private currentPhraseIndex = 0;
@@ -66,6 +71,8 @@ export class HomeComponent {
       delay = 400; // pause before typing next
     }
 
-    this.timeoutId = window.setTimeout(() => this.typeNextCharinterest(), delay);
+    if (this.isBrowser) {
+      this.timeoutId = window.setTimeout(() => this.typeNextCharinterest(), delay);
+    }
   }
 }

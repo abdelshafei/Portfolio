@@ -2,6 +2,8 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
+@import "primeicons/primeicons.css";
+@import "primeflex/primeflex.css";
 
 html {
   @include mat.theme((
@@ -16,6 +18,8 @@ html {
 }body {
   margin: 0;
   padding: 0;
+  background-color: #fff !important; // or your brand color
+  color: #000 !important;
 }
 
 html, body { height: 100%; }
