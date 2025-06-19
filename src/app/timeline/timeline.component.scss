@@ -28,6 +28,10 @@
   animation: pulseShadow 2s infinite ease-in-out;
 }
 
+::ng-deep .custom-timeline .timeline-card:nth-child(even) {
+  margin-top: 25px; // or use transform: translateY(2rem);
+}
+
 ::ng-deep .p-timeline-event-connector {
   width: 3px;
   background: linear-gradient(to bottom, #CBD5E0, #2B2B33);
