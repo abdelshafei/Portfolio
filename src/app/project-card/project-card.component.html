@@ -1,0 +1,40 @@
+<div tabindex="0" (keydown)="flip($event)" class="card-container">
+    <div class="card">
+        <div class="card-front" *ngIf="isFlipped() == false">
+            <div class="header">
+                <!-- header of projects -->
+            </div>
+
+            <div class="desc">
+                <!-- brief decription about the project -->
+            </div>
+
+            <div class="date">
+                <span>
+                    <!-- Date it was done -->
+                </span>
+            </div>
+
+            <div class="flip">
+
+            </div>
+        </div>
+
+        <div class="card-back" *ngIf="isFlipped() == true">
+            <div class="skills">
+                <!-- What it was made with: <skills of what it was done with> -->
+            </div>
+
+            <div class="links">
+                <a class="github"></a>
+                <a class="yt-link"> 
+                    <!-- If there is a youtube link display it here -->
+                </a>
+            </div>
+
+            <div class="flip">
+
+            </div>
+        </div>
+    </div>
+</div>

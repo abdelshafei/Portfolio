@@ -1,1 +1,3 @@
-
+<div class="timeline-item" *ngFor="let project of projects; let i = index">
+    <app-project-card [projDetails]="project"></app-project-card>
+</div>
