@@ -1,40 +1,20 @@
-<div class="body-time">
-<div class="desc"><span>Experience Timeline</span></div>
-  <p-timeline
-    [value]="events"
-    align="alternate"
-    styleClass="customized-timeline"
-  >
-    <!-- Timeline marker -->
-    <ng-template pTemplate="marker" let-event>
-      <span
-        class="p-timeline-event-marker custom-marker"
-        [ngStyle]="{ 'background-color': '#34D399'}">
-      </span>
-    </ng-template>
-
-    <!-- Timeline content -->
-    <ng-template pTemplate="content" let-event>
-      <p-card
-        [header]="event.status"
-        [subheader]="event.startDate + ' to ' + event.endDate"
-        [style]="{'background-color': event.color}"
-        class="shadow-md"
-      >
-        <div class="space-y-4">
-          <img
-            *ngIf="event.image"
-            [src]="event.image"
-            [alt]="event.name"
-            class="w-40 h-auto shadow-md rounded-md"
-          />
-          <div
-            class="text-sm leading-relaxed text-gray-800 dark:text-gray-200"
-            [innerHTML]="event.description"
-          ></div>
+<div class="timeline-container">
+  <div class="desc"><span>Experience Timeline</span></div>
+  <div class="timeline">
+    <div class="timeline-line"></div>
+    <div class="timeline-item" *ngFor="let event of events; let i = index" 
+         [class.left]="i % 2 === 0" [class.right]="i % 2 !== 0">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="timeline-header">
+          <h3>{{ event.status }}</h3>
+          <p class="date">{{ event.startDate }} - {{ event.endDate }}</p>
         </div>
-      </p-card>
-    </ng-template>
-  </p-timeline>
-</div>
-
+        <div class="timeline-body">
+          <img *ngIf="event.image" [src]="event.image" [alt]="event.status" class="timeline-image">
+          <div [innerHTML]="event.description"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 

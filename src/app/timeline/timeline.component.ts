@@ -1,18 +1,15 @@
 import { Component } from '@angular/core';
-import { TimelineModule } from 'primeng/timeline';
-import { CardModule } from 'primeng/card';
-import { ButtonModule } from 'primeng/button';
-import { NgIf, NgStyle } from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-timeline',
-  imports: [TimelineModule, CardModule, ButtonModule, NgIf, NgStyle],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './timeline.component.html',
-  styleUrl: './timeline.component.scss'
+  styleUrls: ['./timeline.component.scss']
 })
 export class TimelineComponent {
-  
-    events = [
+  events = [
     {
       status: 'Studying in Carleton University',
       startDate: 'Sept 2022',
@@ -20,7 +17,7 @@ export class TimelineComponent {
       color: '#FAFAFA',
       image: 'https://carleton.ca/brand/wp-content/uploads/brand-logo-800w-1.jpg',
       description: `
-      <span> Studying Computer Science with a specialization in Artificial Intelligence and Machine Learning at Carleton University, I’ve spent the past three years immersing myself in both foundational and advanced topics.</span> 
+      <span> Studying Computer Science with a specialization in Artificial Intelligence and Machine Learning at Carleton University, I've spent the past three years immersing myself in both foundational and advanced topics.</span> 
       `
     },
     {
@@ -34,4 +31,4 @@ export class TimelineComponent {
       `
     },
   ];
-}
+} 

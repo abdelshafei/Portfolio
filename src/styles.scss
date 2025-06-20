@@ -1,13 +1,6 @@
-
-// Custom Theming for Angular Material
-// For more information: https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
 @use 'primeicons/primeicons.css';
-@layer tailwind, primeng;
-
-@layer tailwind {
-  @import "tailwindcss";
-}
+@use "tailwindcss";
 
 html {
   @include mat.theme((
