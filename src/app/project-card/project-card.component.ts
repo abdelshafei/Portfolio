@@ -23,17 +23,10 @@ export class ProjectCardComponent {
   isFlipped = signal(false);
   private lastTap = 0;
 
-  @HostListener('click') 
-  updateLastTap() {
-    this.lastTap = Date.now();
+  @HostListener('dblclick', ['$event']) // ---> Double clicks on desktops
+  flip(event: Event) : void {
+    this.isFlipped.set(!this.isFlipped());
+    event.preventDefault();
   }
 
-  @HostListener('click')
-  flip() {
-    const now = Date.now();
-    if (now - this.lastTap < 300) {      
-      this.isFlipped.set(!this.isFlipped());
-    }
-    this.lastTap = now;
-  }
 }

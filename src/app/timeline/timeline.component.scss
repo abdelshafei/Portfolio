@@ -98,6 +98,7 @@
   height: auto;
   border-radius: 6px;
   object-fit: cover;
+  flex: 1;
 }
 
 /* Responsive adjustments */
@@ -120,4 +121,13 @@
   .timeline-item.right .timeline-dot {
     left: 10px;
   }
+
+  .timeline-body {
+    display: inline-block
+  }
+
+  .timeline-image {
+    margin-bottom: 1rem
+  }
+
 } 
