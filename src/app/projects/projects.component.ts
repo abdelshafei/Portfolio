@@ -10,9 +10,9 @@ import { ProjectCardComponent } from '../project-card/project-card.component';
 })
 export class ProjectsComponent {
   projects = [{
-    header: 'Itunsify App',
+    header: 'iTunsify App',
     description: 'Web-based interactive database inspired by streaming-services such as iTunes, spotify, etc.',
-    date: '10/2024 - 12/2024',
+    date: 'Oct 2024 - Dec 2024',
     skills: 'Angular16, Node.js, SQLite, Typescript, Javascript',
     gitLink: 'https://github.com/abdelshafei/iTunesfy',
     ytLink: 'https://youtu.be/JBTTAJZrjFo'
@@ -20,7 +20,7 @@ export class ProjectsComponent {
   {
     header: 'BMP280 Device Driver',
     description: 'Linux Kernel module for the BMP280 digital pressure and temperature sensor. It exposes real-time temperature and pressure readings to userspace via the sysfs filesystem.',
-    date: '06/2025 - 07/2025',
+    date: 'June 2025 - July 2025',
     skills: 'Linux Kernel, RaspberryPi, C, Sysfs, Manual configuration of registers by *.i2c.smbus api',
     gitLink: 'https://github.com/abdelshafei/BMP280-device-driver',
     ytLink: 'https://youtu.be/1EwXVq_9rCo'
@@ -28,7 +28,7 @@ export class ProjectsComponent {
   {
     header: 'ASCII Camera',
     description: 'A python program that turns each live webcam frames into Ascii pixelated frames on the terminal.',
-    date: '05/2025 - 06/2025',
+    date: 'May 2025 - June 2025',
     skills: 'openCV Python',
     gitLink: 'https://github.com/abdelshafei/ASCII-Camera',
     ytLink: 'https://www.youtube.com/watch?v=ggeKsc3IKwk'
@@ -36,7 +36,7 @@ export class ProjectsComponent {
   {
     header: 'RaDoTech Simulation',
     description: 'This project simulates the functionality of the RaDoTech health monitoring device, including scanning, data processing, and visualization of health metrics for different user profiles. The system allows users to initiate scans, view results in charts, and monitor device states like battery level.',
-    date: '10/2024 - 12/2024',
+    date: 'Oct 2024 - Dec 2024',
     skills: 'Qt, C++, Agile Methodologies',
     gitLink: 'https://github.com/ParamDesai111/3004-Final-Project',
     ytLink: null
@@ -44,7 +44,7 @@ export class ProjectsComponent {
   {
     header: 'Multi-Threaded Ghost Hunter Simulation',
     description: 'A terminal-based multi-threaded C program simulating four ghost hunters and a ghost navigating a LinkedList-structured house. Threads interact based on evidence collection and behavioral conditions until termination criteria are met.',
-    date: '11/2023 - 12/2023',
+    date: 'Nov 2023 - Dec 2023',
     skills: 'C, Multi-threads',
     gitLink: 'https://github.com/abdelshafei/GhostHuntSimulatora',
     ytLink: null
@@ -52,7 +52,7 @@ export class ProjectsComponent {
   { 
     header: 'Syntax Interpreter',
     description: 'A programming language interpreter built on top of C++.',
-    date: '12/2024 - 12/2024',
+    date: 'Dec 2024 - Jan 2025',
     skills: 'C++, Token Parser, Tree-based Evaluator',
     gitLink: 'https://github.com/abdelshafei/CodeInterpreter',
     ytLink: null

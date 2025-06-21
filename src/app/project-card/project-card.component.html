@@ -2,17 +2,17 @@
     <div class="card">
         <div class="card-front" *ngIf="isFlipped() == false">
             <div class="header">
-                <!-- header of projects -->
+               <span> {{ projDetails.header }} </span>
             </div>
 
             <div class="desc">
                 <!-- brief decription about the project -->
+                 <span> {{ projDetails.description }} </span>
             </div>
 
             <div class="date">
-                <span>
-                    <!-- Date it was done -->
-                </span>
+                <!-- Date it was done -->
+                <span> {{ projDetails.date }} </span>
             </div>
 
             <div class="flip">
