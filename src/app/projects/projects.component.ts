@@ -13,7 +13,7 @@ export class ProjectsComponent {
     header: 'iTunsify App',
     description: 'Web-based interactive database inspired by streaming-services such as iTunes, spotify, etc.',
     date: 'Oct 2024 - Dec 2024',
-    skills: 'Angular16, Node.js, SQLite, Typescript, Javascript',
+    skills: 'Angular16, Node.js, SQLite, REST, RxJS, Typescript, Javascript',
     gitLink: 'https://github.com/abdelshafei/iTunesfy',
     ytLink: 'https://youtu.be/JBTTAJZrjFo'
   },
@@ -46,7 +46,7 @@ export class ProjectsComponent {
     description: 'A terminal-based multi-threaded C program simulating four ghost hunters and a ghost navigating a LinkedList-structured house. Threads interact based on evidence collection and behavioral conditions until termination criteria are met.',
     date: 'Nov 2023 - Dec 2023',
     skills: 'C, Multi-threads, Data Structures',
-    gitLink: 'https://github.com/abdelshafei/GhostHuntSimulatora',
+    gitLink: 'https://github.com/abdelshafei/GhostHuntSimulator',
     ytLink: null
   },
   { 

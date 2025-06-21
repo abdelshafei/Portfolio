@@ -23,10 +23,15 @@ export class ProjectCardComponent {
   isFlipped = signal(false);
   private lastTap = 0;
 
-  @HostListener('click') // click also fires for taps
+  @HostListener('click') 
+  updateLastTap() {
+    this.lastTap = Date.now();
+  }
+
+  @HostListener('click')
   flip() {
     const now = Date.now();
-    if (now - this.lastTap < 300) {        // 300 ms threshold = double-tap
+    if (now - this.lastTap < 300) {      
       this.isFlipped.set(!this.isFlipped());
     }
     this.lastTap = now;
