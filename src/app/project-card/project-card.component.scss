@@ -8,8 +8,8 @@
 
     & .card {
       position: relative;
-      width: 600px; /* Example width */
-      height: 400px; /* Example height */
+      width: 600px;
+      height: 400px; 
       transform-style: preserve-3d;
       transition: transform 0.6s; /* For flip animation */
       box-shadow: 0 0 10px rgba(152, 149, 149, 0.7);
@@ -46,6 +46,7 @@
 
                 & span {
                     font-weight: 100;
+                    font-size: large;
                 }
             }
 
@@ -74,6 +75,21 @@
             inset: 0;
             backface-visibility: hidden;
         }
+    }
+}
+
+@media (max-width: 800px) { 
+    .card-container .card {
+      width: 406px; 
+      height: 300px; 
+
+      & .card-front .header span{
+        font-size: large;
+      }
+
+      & .card-front .desc span {
+        font-size: medium;
+      }
     }
 }
 
