@@ -21,13 +21,13 @@ export class ProjectsComponent {
     header: 'BMP280 Device Driver',
     description: 'Linux Kernel module for the BMP280 digital pressure and temperature sensor. It exposes real-time temperature and pressure readings to userspace via the sysfs filesystem.',
     date: 'June 2025 - July 2025',
-    skills: 'Linux Kernel, RaspberryPi, C, Sysfs, Manual configuration of registers by *.i2c.smbus api',
+    skills: 'Linux Kernel, RaspberryPi, C, Sysfs, Manual configuration of registers by *.i2c.smbus API calls',
     gitLink: 'https://github.com/abdelshafei/BMP280-device-driver',
     ytLink: 'https://youtu.be/1EwXVq_9rCo'
   },
   {
     header: 'ASCII Camera',
-    description: 'A python program that turns each live webcam frames into Ascii pixelated frames on the terminal.',
+    description: 'A python program that turns live webcam frames into Ascii pixelated frames on the terminal.',
     date: 'May 2025 - June 2025',
     skills: 'openCV Python',
     gitLink: 'https://github.com/abdelshafei/ASCII-Camera',
@@ -45,7 +45,7 @@ export class ProjectsComponent {
     header: 'Multi-Threaded Ghost Hunter Simulation',
     description: 'A terminal-based multi-threaded C program simulating four ghost hunters and a ghost navigating a LinkedList-structured house. Threads interact based on evidence collection and behavioral conditions until termination criteria are met.',
     date: 'Nov 2023 - Dec 2023',
-    skills: 'C, Multi-threads',
+    skills: 'C, Multi-threads, Data Structures',
     gitLink: 'https://github.com/abdelshafei/GhostHuntSimulatora',
     ytLink: null
   },

@@ -1,4 +1,4 @@
-import { Component, signal, Input } from '@angular/core';
+import { Component, signal, Input, HostListener } from '@angular/core';
 import { NgIf, NgStyle } from '@angular/common'
 
 export interface project {
@@ -19,11 +19,16 @@ export interface project {
 })
 export class ProjectCardComponent {
 
-  isFlipped = signal(false);
   @Input() projDetails!: project;
+  isFlipped = signal(false);
+  private lastTap = 0;
 
-  flip(event: KeyboardEvent) : void {
-    if(event.key.toLowerCase() === 'f')
-    this.isFlipped.set(!this.isFlipped);
+  @HostListener('click') // click also fires for taps
+  flip() {
+    const now = Date.now();
+    if (now - this.lastTap < 300) {        // 300 ms threshold = double-tap
+      this.isFlipped.set(!this.isFlipped());
+    }
+    this.lastTap = now;
   }
 }
