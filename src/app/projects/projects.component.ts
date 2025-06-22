@@ -29,7 +29,7 @@ export class ProjectsComponent {
     header: 'ASCII Camera',
     description: 'A python program that turns live webcam frames into Ascii pixelated frames on the terminal.',
     date: 'May 2025 - June 2025',
-    skills: 'openCV Python',
+    skills: 'Python, OpenCV',
     gitLink: 'https://github.com/abdelshafei/ASCII-Camera',
     ytLink: 'https://www.youtube.com/watch?v=ggeKsc3IKwk'
   },
@@ -42,7 +42,7 @@ export class ProjectsComponent {
     ytLink: null
   },
   {
-    header: 'Multi-Threaded Ghost Hunter Simulation',
+    header: 'Ghost Hunter Simulation',
     description: 'A terminal-based multi-threaded C program simulating four ghost hunters and a ghost navigating a LinkedList-structured house. Threads interact based on evidence collection and behavioral conditions until termination criteria are met.',
     date: 'Nov 2023 - Dec 2023',
     skills: 'C, Multi-threads, Data Structures',
@@ -53,8 +53,18 @@ export class ProjectsComponent {
     header: 'Syntax Interpreter',
     description: 'A programming language interpreter built on top of C++.',
     date: 'Dec 2024 - Jan 2025',
-    skills: 'C++, Token Parser, Tree-based Evaluator',
+    skills: 'C++, Token Parser, Abstract Syntax Tree',
     gitLink: 'https://github.com/abdelshafei/CodeInterpreter',
     ytLink: null
+  },
+  {
+    header: 'Distance Sensor',
+    description: 'An arduino based project that gives visual and audio alerts based on how close an object is to the user.',
+    date: 'May 2025 - June 2025',
+    skills: 'C, Arduino Uno, HC-SR04 Ultrasonic Sensor, Common-cathode RGB LED, Piezo Buzzer',
+    gitLink: 'https://github.com/abdelshafei/Distance-Sensor',
+    ytLink: 'https://wokwi.com/projects/433297984977377281'
   }]
+
+
 }

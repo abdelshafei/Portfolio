@@ -10,6 +10,7 @@
     align-items: center;
 
 
+
     & .card {
       position: relative;
       width: 600px;
@@ -127,7 +128,8 @@
 
 
 .card-container:hover .card {
-  box-shadow: 0 0 30px #f76c4a;
+  box-shadow: 0 0 50px #f76c4a;
+  
 }
       
 

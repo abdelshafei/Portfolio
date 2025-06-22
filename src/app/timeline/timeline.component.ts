@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./timeline.component.scss']
 })
 export class TimelineComponent {
-  events = [
+    events = [
     {
       status: 'Studying in Carleton University',
       startDate: 'Sept 2022',
@@ -31,4 +31,4 @@ export class TimelineComponent {
       `
     },
   ];
-} 
+}

@@ -20,7 +20,6 @@ export class HomeComponent {
   private phrases = [
     'Full Stack Web Applications.',
     'Embedded Systems.',
-    'Machine Learning.',
     'Learning new tech!'
   ];
   displayInterest = signal('');

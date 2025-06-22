@@ -3,6 +3,8 @@
 @use "tailwindcss";
 
 html {
+  scroll-behavior: smooth;
+  
   @include mat.theme((
     color: (
       theme-type: light,
