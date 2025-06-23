@@ -23,8 +23,14 @@ export class ProjectCardComponent {
   isFlipped = signal(false);
   private lastTap = 0;
 
-  @HostListener('dblclick', ['$event']) // ---> Double clicks on desktops
-  flip(event: Event) : void {
+  @HostListener('dblclick', ['$event']) // --> Double clicks on desktops
+  flipDesk(event: Event) : void {
+    this.isFlipped.set(!this.isFlipped());
+    event.preventDefault();
+  }
+
+  @HostListener('touchend', ['$event'])
+  flipPhone(event: Event) : void {
     this.isFlipped.set(!this.isFlipped());
     event.preventDefault();
   }

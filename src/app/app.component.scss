@@ -3,8 +3,8 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 0; // ensure no extra space
-  gap: 20px;  // gap only between the two lines
+  padding: 0;
+  gap: 20px;  
   margin-bottom: 10px;
   margin-top: 10px;
 }
@@ -14,24 +14,31 @@
   flex: 1;
   border: none;
   border-top: 1px solid black;
-  margin: 0; // removes default browser margin
+  margin: 0; 
 }
 
 .gap-space {
-  width: 50px; // or however wide you want the middle gap
+  width: 50px; 
 }
 
 .footer-wrapper {
     display: flex;
     justify-content: space-between;
+    margin: 0px 20px 0px 20px;
+    padding-bottom: 10px
 }
 
-.right-footer {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 0.8rem;
+.left-foot, .right-foot {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 0.9rem;
+  margin-top: 1rem;
 }
 
-.left-footer {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 0.8rem;
+@media (max-width: 500px) {
+  .left-foot {
+    font-size: 0.7rem !important;
+  } 
+  .right-foot{
+    font-size: 0.7rem !important;
+  }
 }

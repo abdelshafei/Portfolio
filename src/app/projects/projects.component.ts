@@ -20,7 +20,7 @@ export class ProjectsComponent {
   {
     header: 'BMP280 Device Driver',
     description: 'Linux Kernel module for the BMP280 digital pressure and temperature sensor. It exposes real-time temperature and pressure readings to userspace via the sysfs filesystem.',
-    date: 'June 2025 - July 2025',
+    date: 'June 2025 - June 2025',
     skills: 'Linux Kernel, RaspberryPi, C, Sysfs, Manual configuration of registers by *.i2c.smbus API calls',
     gitLink: 'https://github.com/abdelshafei/BMP280-device-driver',
     ytLink: 'https://youtu.be/1EwXVq_9rCo'
@@ -58,7 +58,7 @@ export class ProjectsComponent {
     ytLink: null
   },
   {
-    header: 'Distance Sensor',
+    header: 'Distance Notifier',
     description: 'An arduino based project that gives visual and audio alerts based on how close an object is to the user.',
     date: 'May 2025 - June 2025',
     skills: 'C, Arduino Uno, HC-SR04 Ultrasonic Sensor, Common-cathode RGB LED, Piezo Buzzer',

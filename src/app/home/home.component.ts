@@ -20,7 +20,9 @@ export class HomeComponent {
   private phrases = [
     'Full Stack Web Applications.',
     'Embedded Systems.',
-    'Learning new tech!'
+    'Systems Programming',
+    'Collaborating on projects that make a difference.',
+    'Always learning. Always building.'
   ];
   displayInterest = signal('');
   private currentPhraseIndex = 0;
