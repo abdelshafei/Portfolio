@@ -12,4 +12,9 @@ export class AboutComponent {
   openContact: boolean = false;
   isHovered: boolean = false;
 
+  openForm() {
+    this.openContact = !this.openContact;
+    // works!
+  }
+
 }
