@@ -9,5 +9,6 @@ import { CoursesComponent } from '../courses/courses.component'
   styleUrl: './about.component.scss'
 })
 export class AboutComponent {
+  openContact: boolean = false;
 
 }

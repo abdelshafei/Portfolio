@@ -56,7 +56,7 @@ export class CoursesComponent {
     description: 'Applied advanced OOP principles in C++ using Qt for GUI development. Covered inheritance, polymorphism, and design patterns within Agile team environments to build a maintainable end term project.',
     date: 'Sep 2024 - Dec 2024',
     grade: 'A+',
-    skills: 'Qt, C++, Agile Methodology' 
+    skills: 'Qt, C++, Design Patterns, Agile Methodology' 
   },
   {
     title: 'Operating Systems',
@@ -64,6 +64,6 @@ export class CoursesComponent {
     description: 'Explored the fundamentals of the Linux kernel, including but not limited to process/memory management, file systems, and kernel module development such as device drivers.',
     date: 'Jan 2025 - April 2025',
     grade: 'A+',
-    skills: 'C, Linux, Kernel Modules, Concurrency Programming' 
+    skills: 'C, Linux, Kernel Modules, Concurrency Programming, Dockers' 
   }];
 }
