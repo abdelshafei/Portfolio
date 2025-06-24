@@ -16,7 +16,7 @@ export class CoursesComponent {
     description: 'Introduced to systems-level C programming in Linux, focusing on pointers, manual memory management, concurrency (threads/processes), and inter-process communication.',
     date: 'Sep 2023 - Dec 2023',
     grade: 'A-',
-    skills: 'C, Concurrency, Memory Management'
+    skills: 'C, Concurrency Programming, Memory Management'
   }, 
   {
     title: 'Data Structures & Abstract Data',
@@ -24,7 +24,7 @@ export class CoursesComponent {
     description: 'Designed and implemented core data structures in Java and analyzed algorithmic complexity.',
     date: 'Sep 2023 - Dec 2023',
     grade: 'B',
-    skills: 'Java, Data Structures, Algorithm Analysis, Clean Code'
+    skills: 'Java, Data Structures, Algorithm Analysis, Effecient Coding'
   }, 
   {
     title: 'Fundamentals of Web Applications',
@@ -53,7 +53,7 @@ export class CoursesComponent {
   {
     title: 'Object-Oriented Programming',
     code: '(COMP 3004)',
-    description: 'Applied advanced OOP principles in C++ using Qt for GUI development. Covered inheritance, polymorphism, and design patterns within Agile team environments to build a maintainable project.',
+    description: 'Applied advanced OOP principles in C++ using Qt for GUI development. Covered inheritance, polymorphism, and design patterns within Agile team environments to build a maintainable end term project.',
     date: 'Sep 2024 - Dec 2024',
     grade: 'A+',
     skills: 'Qt, C++, Agile Methodology' 
@@ -61,9 +61,9 @@ export class CoursesComponent {
   {
     title: 'Operating Systems',
     code: '(COMP 3000)',
-    description: 'Explored the fundamentals of the Linux kernel, including process management, memory handling, and kernel module development such as device drivers.',
+    description: 'Explored the fundamentals of the Linux kernel, including but not limited to process/memory management, file systems, and kernel module development such as device drivers.',
     date: 'Jan 2025 - April 2025',
     grade: 'A+',
-    skills: 'C, Linux, Kernel Modules, Concurrency' 
+    skills: 'C, Linux, Kernel Modules, Concurrency Programming' 
   }];
 }

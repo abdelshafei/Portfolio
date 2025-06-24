@@ -4,6 +4,7 @@ import { NavComponent } from './nav/nav.component';
 import { TimelineComponent } from './timeline/timeline.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { AboutComponent } from './about/about.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 
 @Component({
@@ -13,5 +14,5 @@ import { AboutComponent } from './about/about.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-
+  Year = new Date().getFullYear();
 }

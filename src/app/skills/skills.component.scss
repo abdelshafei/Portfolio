@@ -1,0 +1,22 @@
+.title {
+  text-align: center;
+
+  span {
+    font-family: 'copperplate', fantasy;
+    font-size: xx-large;
+    font-weight: bold;
+    color: #333;
+  }
+}
+
+app-skill-icon {
+    display:inline-block;
+}
+
+.icon-item {
+    // height: 40vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    // transform: translateX(40px);
+}

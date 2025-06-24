@@ -1,6 +1,15 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChildren, QueryList  } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { ProjectCardComponent } from '../project-card/project-card.component';
+
+interface Project {
+  header: string;
+  description: string;
+  date: string;
+  skills: string;
+  gitLink: string;
+  ytLink: string | null;
+}
 
 @Component({
   selector: 'app-projects',
@@ -9,7 +18,7 @@ import { ProjectCardComponent } from '../project-card/project-card.component';
   styleUrl: './projects.component.scss'
 })
 export class ProjectsComponent {
-  projects = [{
+  projects: Project[] = [{
     header: 'iTunsify App',
     description: 'Web-based interactive database inspired by streaming-services such as iTunes, spotify, etc.',
     date: 'Oct 2024 - Dec 2024',
@@ -24,6 +33,14 @@ export class ProjectsComponent {
     skills: 'Linux Kernel, RaspberryPi, C, Sysfs, Manual configuration of registers by *.i2c.smbus API calls',
     gitLink: 'https://github.com/abdelshafei/BMP280-device-driver',
     ytLink: 'https://youtu.be/1EwXVq_9rCo'
+  },
+  {
+    header: 'Chatting App',
+    description: 'A real-time web-based messaging platform built with WebSockets and room-based architecture. Designed to support private messaging and minimize server-side exposure of user data through basic data abstraction and client-managed identifiers.',
+    date: 'April 2024 - May 2024',
+    skills: 'HTML, CSS, Javascript, Node.js, WebSockets',
+    gitLink: 'https://github.com/abdelshafei/ChattingApp',
+    ytLink: null
   },
   {
     header: 'ASCII Camera',
@@ -64,7 +81,5 @@ export class ProjectsComponent {
     skills: 'C, Arduino Uno, HC-SR04 Ultrasonic Sensor, Common-cathode RGB LED, Piezo Buzzer',
     gitLink: 'https://github.com/abdelshafei/Distance-Sensor',
     ytLink: 'https://wokwi.com/projects/433297984977377281'
-  }]
-
-
+  }];
 }
