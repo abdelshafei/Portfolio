@@ -10,5 +10,6 @@ import { CoursesComponent } from '../courses/courses.component'
 })
 export class AboutComponent {
   openContact: boolean = false;
+  isHovered: boolean = false;
 
 }

@@ -3,8 +3,9 @@
     <app-courses></app-courses>
     <app-skills></app-skills>
     <div class="btn">
-        <a class="contactBtn">
-            <img src="https://www.svgrepo.com/show/263974/email-mail.svg"/>
+        <a class="contactBtn" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false" >
+            <i class="fa fa-envelope" [style]="isHovered ? 'color: white;' : 'color: black'"></i>
+
             <span>- Contact Me</span>
         </a>
     </div>
