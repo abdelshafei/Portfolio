@@ -2,8 +2,9 @@
     <div class="title">
         <span>Skills</span>
     </div>
-
-    <div class="icon-item" *ngFor="let skill of skills; let i = index">
-        <app-skill-icon [iconDet]="skill"></app-skill-icon>
+    <div class="icons">
+        <div class="icon-item" *ngFor="let skill of skills; let i = index">
+            <app-skill-icon [iconDet]="skill"></app-skill-icon>
+        </div>
     </div>
 </div>
