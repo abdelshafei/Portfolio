@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { SkillIconComponent } from '../skill-icon/skill-icon.component';
 import { NgFor } from '@angular/common';
+import { SkillIconComponent } from '../skill-icon/skill-icon.component';
 
 @Component({
   selector: 'app-skills',
-  imports: [SkillIconComponent, NgFor],
+  imports: [NgFor, SkillIconComponent],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss'
 })
@@ -12,110 +12,79 @@ export class SkillsComponent {
   skills = [{
     label: 'Python',
     src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg',
-    waveAmp: 20,
-    speed: 3
   },
   {
     label: 'C',
-    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg',
-    waveAmp: 10,
-    speed: 1
+    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-plain.svg',
   },
   {
     label: 'C++',
-    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg',
-    waveAmp: 10,
-    speed: 2
+    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-plain.svg',
   },
   {
     label: 'Java',
     src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
-    waveAmp: 30, //
-    speed: 10 //
   },
   {
     label: 'Prolog',
-    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prolog/prolog-original.svg',
-    waveAmp: 30, //
-    speed: 10 //
+    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prolog/prolog-plain.svg',
   },
   {
     label: 'Git',
     src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
-    waveAmp: 30, //
-    speed: 10 //
   },
   {
     label: 'Docker',
-    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
-    waveAmp: 30, //
-    speed: 10 //
+    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-plain.svg',
   },
   {
     label: 'Kubernetes',
     src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain-wordmark.svg',
-    waveAmp: 30, //
-    speed: 10 //
   },
   {
     label: 'Linux',
-    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg',
-    waveAmp: 30, //
-    speed: 10 //
+    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-plain.svg',
   },
   {
     label: 'Raspberry Pi',
-    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/raspberrypi/raspberrypi-original.svg',
-    waveAmp: 30, //
-    speed: 10 //
+    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/raspberrypi/raspberrypi-plain.svg',
   },
   {
     label: 'Arduino',
     src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/arduino/arduino-original-wordmark.svg',
-    waveAmp: 30, //
-    speed: 10 //
   },
   {
-    label: 'SQL',
-    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuresqldatabase/azuresqldatabase-original.svg',
-    waveAmp: 30, //
-    speed: 10 //
+    label: 'SQLite',
+    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-plain.svg',
   },
   {
     label: 'Node.js',
     src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg',
-    waveAmp: 30, //
-    speed: 10 //
   },
   {
     label: 'Javascript',
-    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg',
-    waveAmp: 30, //
-    speed: 10 //
+    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-plain.svg',
   },
   {
     label: 'Typescript',
-    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg',
-    waveAmp: 30, //
-    speed: 10 //
+    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-plain.svg',
   },
   {
     label: 'Angular',
-    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg',
-    waveAmp: 30, //
-    speed: 10 //
+    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-plain.svg',
   },
   {
     label: 'Html',
-    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg',
-    waveAmp: 30, //
-    speed: 10 //
+    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-plain.svg',
   },
   {
     label: 'Sass',
     src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg',
-    waveAmp: 30, //
-    speed: 10 //
+  },
+  {
+    label: 'RxJS',
+    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rxjs/rxjs-plain.svg'
   }
   ];
+
 }

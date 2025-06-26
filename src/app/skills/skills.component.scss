@@ -10,14 +10,18 @@
   }
 }
 
-app-skill-icon {
-    display:inline-block;
-}
-
-.icon-item {
+.icons {
     // height: 40vh;
-    display: flex;
-    justify-content: flex-start;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
+    gap: 8rem;
+    max-width: 80%;
+    margin: 0 auto;
     // transform: translateX(40px);
+
+    & .icon-item {
+        gap: 2rem;
+    }
 }

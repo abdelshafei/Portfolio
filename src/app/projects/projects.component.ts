@@ -30,7 +30,7 @@ export class ProjectsComponent {
     header: 'BMP280 Device Driver',
     description: 'Linux Kernel module for the BMP280 digital pressure and temperature sensor. It exposes real-time temperature and pressure readings to userspace via the sysfs filesystem.',
     date: 'June 2025 - June 2025',
-    skills: 'Linux Kernel, RaspberryPi, C, Sysfs, Manual configuration of registers by *.i2c.smbus API calls',
+    skills: 'Linux Kernel, RaspberryPi, C, Sysfs, Manual configuration of registers by *.i2c.smbus API calls, Device Driver operations',
     gitLink: 'https://github.com/abdelshafei/BMP280-device-driver',
     ytLink: 'https://youtu.be/1EwXVq_9rCo'
   },

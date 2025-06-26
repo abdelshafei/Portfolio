@@ -10,6 +10,7 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 60px;
 
     & a {
         text-decoration: none;
@@ -17,7 +18,7 @@ hr {
         display:block;
         width:210px;
         height:80px;
-        background: #fff;
+        background: #ebebeb;
         text-align:left;
         padding-left: 15px;
         transform: rotate(0deg) skew(0deg) translate(0,0);
@@ -36,7 +37,7 @@ hr {
         }
 
         & i {
-            font-size: 35px;
+            font-size: 25px;
             color: #262626;
             line-height:80px;
             transition: .5s;
@@ -81,7 +82,7 @@ hr {
         }
 
         &:hover:after, &:hover:before {
-            background-color: #343434 !important;
+            background-color: #131313 !important;
         }
     }
 }
