@@ -1,6 +1,8 @@
-import { AfterViewInit, Component, ElementRef, ViewChildren, QueryList  } from '@angular/core';
+import { Component  } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { ProjectCardComponent } from '../project-card/project-card.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
+
 
 interface Project {
   header: string;
@@ -13,7 +15,7 @@ interface Project {
 
 @Component({
   selector: 'app-projects',
-  imports: [ProjectCardComponent, NgFor],
+  imports: [ProjectCardComponent, NgFor, MatTooltipModule],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })

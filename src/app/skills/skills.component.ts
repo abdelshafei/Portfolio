@@ -84,6 +84,10 @@ export class SkillsComponent {
   {
     label: 'RxJS',
     src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rxjs/rxjs-plain.svg'
+  },
+  {
+    label: 'Scheme',
+    src: './assets/racket-4.svg'
   }
   ];
 

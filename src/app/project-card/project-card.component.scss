@@ -13,8 +13,8 @@
 
     & .card {
       position: relative;
-      width: 600px;
-      height: 400px; 
+      width: 416px;
+      height: 350px; 
       transform-style: preserve-3d;
       transition: transform 0.6s, box-shadow 0.3s ease;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -38,7 +38,7 @@
 
                 & span {
                     font-family:Georgia, 'Times New Roman', Times, serif;
-                    font-size: xx-large;
+                    font-size: x-large;
                     color: #243146 !important;
                 }
             }
@@ -54,7 +54,7 @@
 
                 & span {
                     font-weight: 100;
-                    font-size: large;
+                    font-size: medium;
                     color: #533838;
                 }
             }
@@ -70,7 +70,7 @@
                 & span {
                     margin: 0;
                     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-                    font-size: 0.9rem;
+                    font-size: 0.7rem;
                     color: #2d9cdb;
                     font-style: italic;
                 }
@@ -121,7 +121,7 @@
   text-align: center;
   gap: 1rem;                  
 
-  .label   { font-weight: 600; font-size: 1.2rem; }
+  .label   { font-weight: 600; font-size: 1.1rem; }
   .content { font-weight: 100; }
 }
 
@@ -131,6 +131,7 @@
 
 .card-container:hover .card {
   box-shadow: 0 0 30px #444242;
+  cursor: pointer;
 }
       
 

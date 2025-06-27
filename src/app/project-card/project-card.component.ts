@@ -21,7 +21,8 @@ export class ProjectCardComponent {
 
   @Input() projDetails!: project;
   isFlipped = signal(false);
-  private lastTap = 0;
+  private lastTapTime = 0;
+  private tapTimeout: any;
 
   @HostListener('dblclick', ['$event']) // --> Double clicks on desktops
   flipDesk(event: Event) : void {
@@ -31,8 +32,17 @@ export class ProjectCardComponent {
 
   @HostListener('touchend', ['$event'])
   flipPhone(event: Event) : void {
-    this.isFlipped.set(!this.isFlipped());
-    event.preventDefault();
+    const currentTime = new Date().getTime();
+    const tapLength = currentTime - this.lastTapTime;
+
+    clearTimeout(this.tapTimeout); 
+
+    if (tapLength < 500 && tapLength > 0) {
+      console.log('Double tap detected!');
+        this.isFlipped.set(!this.isFlipped());
+        event.preventDefault();
+      event.preventDefault();
+    }
   }
 
 }

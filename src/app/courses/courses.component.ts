@@ -65,5 +65,13 @@ export class CoursesComponent {
     date: 'Jan 2025 - April 2025',
     grade: 'A+',
     skills: 'C, Linux, Kernel Modules, Concurrency Programming, Docker' 
+  },
+  {
+    title: 'Programming Paradigms',
+    code: '(COMP 3007)',
+    description: 'Explored alternative paradigms beyond imperative/OOP: built functional programs in Scheme and logic programs in Prolog.',
+    date: 'Jan 2025 - April 2025',
+    grade: 'A+',
+    skills: 'Functional Programming, Logic Programming' 
   }];
 }

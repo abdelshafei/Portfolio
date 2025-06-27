@@ -1,11 +1,17 @@
 <div class="title">
-    <span> Projects </span>
-    <hr>
+    <div class="label">
+        <span> Projects </span>
+    </div>
+    <div class="info-icon">
+        <i class="fa-solid fa-circle-info"
+           matTooltip="Double-click on cards to flip!"
+           matTooltipPosition="below"
+           matTooltipShowDelay="300"></i>
+    </div>
 </div>
 <div class="body-proj">
     <div class="project-item" *ngFor="let project of projects; let i = index">
         <app-project-card [projDetails]="project"></app-project-card>
     </div>
 </div>
-<hr>
 

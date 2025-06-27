@@ -1,28 +1,41 @@
-<app-nav></app-nav>
+<div>
+  <app-nav></app-nav>
 
-<div id="home">
-  <app-home></app-home>
+  <div id="home">
+    <app-home></app-home>
+  </div>
+
+  <div id="timeline">
+    <app-timeline></app-timeline>
+  </div>
+
+  <div id="projects">
+    <app-projects></app-projects>
+  </div>
+
+  <div id="about">
+    <app-about></app-about>
+  </div>
+
+  <div id="Contact-Form" class="btn">
+      <a href="#Contact-Form" class="contactBtn" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false" (click)="showContact = true">
+          <i class="fa fa-envelope" [style]="isHovered ? 'color: white;' : 'color: black;'"></i>
+          <span>• Contact Me</span>
+      </a>
+  </div>
+
+  <div class="inlineHr-wrapper">
+    <hr class="inlineHr" id="LeftEnd">
+    <div class="gap-space"></div>
+    <hr class="inlineHr" id="RightEnd">
+  </div>
+
+  <div class="footer-wrapper">
+    <span class="left-foot">© {{ Year }} Abdelrahman ElShafay</span>
+    <span class="right-foot">Built with Angular19</span>
+  </div>
 </div>
 
-<div id="timeline">
-  <app-timeline></app-timeline>
-</div>
-
-<div id="projects">
-  <app-projects></app-projects>
-</div>
-
-<div id="about">
-  <app-about></app-about>
-</div>
-
-<div class="inlineHr-wrapper">
-  <hr class="inlineHr" id="LeftEnd">
-  <div class="gap-space"></div>
-  <hr class="inlineHr" id="RightEnd">
-</div>
-
-<div class="footer-wrapper">
-  <span class="left-foot">© {{ Year }} Abdelrahman ElShafay</span>
-  <span class="right-foot">Built with Angular19</span>
+<div class="overlay" *ngIf="showContact">
+  <app-contact-form></app-contact-form>
 </div>
