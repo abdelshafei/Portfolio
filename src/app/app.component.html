@@ -18,7 +18,7 @@
   </div>
 
   <div id="Contact-Form" class="btn">
-      <a href="#Contact-Form" class="contactBtn" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false" (click)="showContact = true">
+      <a href="#Contact-Form" class="contactBtn" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false" (click)="openContact = true">
           <i class="fa fa-envelope" [style]="isHovered ? 'color: white;' : 'color: black;'"></i>
           <span>• Contact Me</span>
       </a>
@@ -36,6 +36,6 @@
   </div>
 </div>
 
-<div class="overlay" *ngIf="showContact">
+<div class="overlay" *ngIf="openContact === true">
   <app-contact-form></app-contact-form>
 </div>

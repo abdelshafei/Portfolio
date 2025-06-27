@@ -19,10 +19,9 @@ export class AppComponent {
 
   openContact: boolean = false;
   isHovered: boolean = false;
-  showContact = false;
 
   openForm() {
-    this.openContact = !this.openContact;
+    this.openContact = true;
     // works!
   }
 }

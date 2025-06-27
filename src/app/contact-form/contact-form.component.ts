@@ -7,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './contact-form.component.scss'
 })
 export class ContactFormComponent {
-
+  onSubmit(event: Event) {
+    event.preventDefault(); 
+    
+  }
 }
