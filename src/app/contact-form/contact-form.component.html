@@ -1,16 +1,33 @@
 <div class="contact-modal">
-    <form>
+    <form (submit)="onSubmit($event)">
       <div class="close">
-          <button class="close-btn">
+          <button class="close-btn" type="button" (click)="onCloseClick()">
             <i class="fa fa-xmark"></i>
           </button>
       </div>
-      <label>Your Name</label>
-      <input type="text" placeholder="Enter name" />
-      <label>Your Email</label>
-      <input type="email" placeholder="Enter email" />
-      <label>Your Message</label>
-      <textarea placeholder="Enter message" class="msgBox"></textarea>
-      <button type="submit" class="send-btn">Send</button>
+      <mat-form-field>
+        <mat-label>Your Name</mat-label>
+        <input matInput [formControl]="name" required/>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Your Email</mat-label>
+        <input matInput 
+              [formControl]="email"
+              (blur)="updateErrorMessage()"
+              required/>
+        @if (email.invalid) {
+          <mat-error>{{errorMessage()}}</mat-error>
+        }
+      </mat-form-field>
+      <mat-form-field class="msgBox">
+        <mat-label>Your Message</mat-label>
+        <textarea matInput [formControl]="msg" required></textarea>
+      </mat-form-field>
+      <button type="submit" 
+              class="send-btn" 
+              [disabled]="this.email.hasError('required') || this.email.hasError('email') || this.name.hasError('required') || this.msg.hasError('required')">
+                Send
+              </button>
+      <button type="submit" class="save-btn">Save</button>
     </form>
 </div>

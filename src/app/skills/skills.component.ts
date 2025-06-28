@@ -71,7 +71,7 @@ export class SkillsComponent {
   },
   {
     label: 'Angular',
-    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-plain.svg',
+    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angularjs/angularjs-plain.svg',
   },
   {
     label: 'Html',
