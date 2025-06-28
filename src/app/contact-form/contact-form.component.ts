@@ -20,6 +20,8 @@ export class ContactFormComponent {
   readonly email = new FormControl('', [Validators.required, Validators.email]);
   readonly msg = new FormControl('', [Validators.required]);
 
+  isSending = false;
+
   errorMessage = signal('');
 
   constructor() {
@@ -40,6 +42,10 @@ export class ContactFormComponent {
 
   onSubmit(event: Event) {
     event.preventDefault(); 
+
+    this.isSending = true;
+
+    
   }
 
   onCloseClick() {

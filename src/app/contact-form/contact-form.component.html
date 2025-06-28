@@ -1,5 +1,6 @@
 <div class="contact-modal">
-    <form (submit)="onSubmit($event)">
+    <form (submit)="onSubmit($event)" name="contact" netlify>
+      <input type="hidden" name="form-name" value="contact">
       <div class="close">
           <button class="close-btn" type="button" (click)="onCloseClick()">
             <i class="fa fa-xmark"></i>
@@ -7,12 +8,13 @@
       </div>
       <mat-form-field>
         <mat-label>Your Name</mat-label>
-        <input matInput [formControl]="name" required/>
+        <input matInput [formControl]="name" name="name" required/>
       </mat-form-field>
       <mat-form-field>
         <mat-label>Your Email</mat-label>
         <input matInput 
               [formControl]="email"
+              name="email"
               (blur)="updateErrorMessage()"
               required/>
         @if (email.invalid) {
@@ -21,13 +23,12 @@
       </mat-form-field>
       <mat-form-field class="msgBox">
         <mat-label>Your Message</mat-label>
-        <textarea matInput [formControl]="msg" required></textarea>
+        <textarea matInput [formControl]="msg" name="msg" required></textarea>
       </mat-form-field>
       <button type="submit" 
               class="send-btn" 
-              [disabled]="this.email.hasError('required') || this.email.hasError('email') || this.name.hasError('required') || this.msg.hasError('required')">
+              [disabled]="this.email.hasError('required') || this.email.hasError('email') || this.name.hasError('required') || this.msg.hasError('required') || isSending == true">
                 Send
               </button>
-      <button type="submit" class="save-btn">Save</button>
     </form>
 </div>

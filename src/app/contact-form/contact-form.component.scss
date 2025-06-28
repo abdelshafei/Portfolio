@@ -44,22 +44,12 @@
 
       &[disabled] {
         cursor:not-allowed;
+        background-color: #0b7350;
       }
-    }
 
-    .save-btn {
-      position: relative;
-      padding: 0.8rem;
-      background-color: #b4b7b6;
-      color: white;
-      border: none;
-      border-radius: 10px;
-      font-weight: bold;
-      cursor: pointer;
-
-      &:active {
-        background-color: #cacecc !important;
+      &:active:not([disabled]) {
         cursor: pointer;
+        background-color: #13ce90;
       }
     }
   }
@@ -84,7 +74,7 @@
   &:hover {
     cursor: pointer;
     color: crimson;
-    transform: scale(1.1);
+    transform: scale(1.05);
     
     & i{
         color: crimson;
