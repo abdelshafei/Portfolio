@@ -49,18 +49,18 @@
 }
 
 .interests {
-    font-family: "Times New Roman", Times, serif;
-    color: rgb(166, 55, 55);
-    font-size: 24px !important;
-    font-weight: 600;
-    display: inline-block;
+  font-family: "Times New Roman", Times, serif;
+  color: rgb(208, 78, 78);
+  font-size: 24px !important;
+  font-weight: 600;
+  display: inline-block;
 }
 
 .interests .cursor {
-    display: inline-block;
-    font-size: 30px !important;
-    animation: blink 1s step-end infinite;
-    margin-left: 0rem !important;
+  display: inline-block;
+  font-size: 30px !important;
+  animation: blink 1s step-end infinite;
+  margin-left: 0rem !important;
 }
 
 .Home {
@@ -75,39 +75,66 @@
 
 .links {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   flex-wrap: wrap;
   margin-top: 1rem;
   padding-bottom: 0;
-  margin-left: 2rem;
+  justify-content: center;
 
   a {
     display: flex;
+    justify-content: center;
     align-items: center;
     text-decoration: none;
     cursor: pointer;
+    background-color:azure;
+    box-shadow: 0 10px 25px rgba(45, 42, 42, 0.1);
+    width: 40px;
+    height: 40px;
+    position: relative;
+    border-radius: 20px;
+    transition: .5s;
 
     svg, img {
       width: 20px;
       height: 20px;
+      position: absolute;
+      transition: .5s;
     }
 
     span {
       margin: 0rem 0 0 0;
       font-size: 0.9rem;
-      font-weight: 500;
+      font-weight: 200;
       color: black;
-      padding-left: 5px;
       position: relative;
       font-size: 1rem;
-      padding-left: 0.5rem;
+      opacity: 0;
+      transition: .5s;
+      letter-spacing: 2px;
+    }
+
+    &:hover {
+
+      & span {
+        opacity: 1;
+        color: aliceblue;
+      }
+
+      & svg, & img {
+        opacity: 0;
+      }
+
+      width: 100px;
+      background: linear-gradient(to right, #2c3e50, #4ca1af);
+
     }
 
 
-    &:hover span {
-      text-decoration:underline;
-      text-underline-offset: 4px;
-    }
+    // &:hover span {
+    //   text-decoration:underline;
+    //   text-underline-offset: 4px;
+    // }
   }
 }
 
@@ -126,54 +153,56 @@
 
 @media (max-width: 800px) { 
 
-    .about {
-        padding-left: 12px;
-        padding-right: 12px;
-        margin-top: 20px;
-        margin-left: 60px;
-        position: relative;
-    }
+  .about {
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-top: 20px;
+    margin-left: 60px;
+    position: relative;
+  }
 
-    .profile-pic { 
-        width: 175px;
-        height: 175px;
-    }
+  .profile-pic { 
+    width: 175px;
+    height: 175px;
+  }
 
-    .profile-pic-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+  .profile-pic-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+  }
 
-    span {
-        font-size: medium;
-    }
+  span {
+    font-size: medium;
+  }
 
-    .links { 
-        justify-content: center;
-    }
+  .links { 
+    justify-content: center;
+  }
 
-    .Paragraphs span {
-        margin-left: 0rem;
-    }
+  .Paragraphs span {
+    margin-left: 0rem;
+  }
 
-    .Home {
-        display: inline;
-        flex-wrap: wrap;
-        justify-items: column;
-    }
+  .Home {
+    display: inline;
+    flex-wrap: wrap;
+    justify-items: column;
 
-    .greeting {
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        flex-wrap: wrap;
-        margin-bottom: 0rem !important;
-    }
+  }
 
-    .greeting .cursor {
-        font-size: 25px;
-    }
+  .greeting {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0rem !important;
+  }
+
+  .greeting .cursor {
+    font-size: 25px;
+  }
 
 }
 

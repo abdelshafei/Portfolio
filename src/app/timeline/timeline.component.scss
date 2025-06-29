@@ -25,7 +25,7 @@
   top: 0;
   bottom: 0;
   left: 50%;
-  width: 2px;
+  width: 5px;
   background-color: #31373f;
   transform: translateX(-50%);
 }
@@ -45,6 +45,7 @@
 .timeline-item.right {
   left: 50%;
   padding-left: 70px;
+  
 }
 
 .timeline-dot {
@@ -92,7 +93,7 @@
 
 .timeline-content {
   padding: 20px;
-  background-color: #e7e3db;
+  background-color: #f3f0ea;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
@@ -126,7 +127,7 @@
 }
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 930px) {
   .timeline-line {
     left: 20px;
   }
