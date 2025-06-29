@@ -18,10 +18,8 @@ export class SkillIconComponent {
   @ViewChild('tooltip') tooltip!: MatTooltip;
 
   onClick() {
-    this.tooltip.show(2200);
-
     setTimeout(() => {
-      this.tooltip.hide();
+      this.tooltip.show();
     }, 2000);
   }
 }
