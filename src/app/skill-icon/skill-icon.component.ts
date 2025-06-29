@@ -21,5 +21,9 @@ export class SkillIconComponent {
     setTimeout(() => {
       this.tooltip.show();
     }, 2000);
+
+    setTimeout(() => {
+      this.tooltip.hide();
+    }, 100);
   }
 }
