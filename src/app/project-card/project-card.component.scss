@@ -4,7 +4,7 @@
 
 .card-container {
     perspective: 1000px;
-    background-color: #2D3250;
+    background-color: #333437;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -129,7 +129,7 @@
 }
 
 .card-container:hover .card {
-  box-shadow: 0 0 30px #c1b2b2;
+  box-shadow: 0 0 30px #ffffff;
   cursor: pointer;
 }
       

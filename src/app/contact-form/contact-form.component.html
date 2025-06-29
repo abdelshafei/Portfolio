@@ -27,8 +27,9 @@
       </mat-form-field>
       <button type="submit" 
               class="send-btn" 
-              [disabled]="this.email.hasError('required') || this.email.hasError('email') || this.name.hasError('required') || this.msg.hasError('required') || isSending == true">
+              [disabled]="this.email.invalid || this.name.invalid || this.msg.invalid|| isSending == true">
                 Send
-              </button>
+      </button>
+      <mat-label style="text-align: center;">{{ subMessage() }}</mat-label>
     </form>
 </div>
