@@ -1,7 +1,8 @@
-import { Component  } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { ProjectCardComponent } from '../project-card/project-card.component';
-import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatTooltipModule, MatTooltip } from '@angular/material/tooltip';
+import { interval } from 'rxjs';
 
 
 interface Project {
@@ -84,4 +85,11 @@ export class ProjectsComponent {
     gitLink: 'https://github.com/abdelshafei/Distance-Sensor',
     ytLink: 'https://wokwi.com/projects/433297984977377281'
   }];
+
+  @ViewChild('tooltip') tooltip!: MatTooltip;
+
+  onClick() {
+    this.tooltip.show();
+    this.tooltip.hide(500);
+  }
 }
