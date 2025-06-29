@@ -93,3 +93,15 @@ mat-error {
     font-weight: 600;
     font-size: 12px;
 }
+
+@media (max-width: 500px) { 
+    .contact-modal {
+        width: 325px;
+    }
+}
+
+@media (max-width: 400px) {
+    .contact-modal {
+        width: 290px !important;
+    }
+}
