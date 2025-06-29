@@ -90,6 +90,10 @@ export class ProjectsComponent {
 
   onClick() {
     this.tooltip.show();
-    this.tooltip.hide(500);
+
+    setTimeout(() => {
+      this.tooltip.hide();
+    }, 2000);
+
   }
 }
