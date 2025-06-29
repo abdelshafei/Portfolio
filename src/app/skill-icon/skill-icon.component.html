@@ -2,5 +2,7 @@
     <img [src]="skillDets.src"
          [matTooltip]="skillDets.label"
          matTooltipPosition="above"
-         [matTooltipShowDelay]="2200"/>
+         [matTooltipShowDelay]="2200"
+         #tooltip="matTooltip"
+         (click)="onClick()"/>
 </div>

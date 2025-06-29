@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { MatTooltipModule } from '@angular/material/tooltip';
+import { Component, Input, ViewChild } from '@angular/core';
+import { MatTooltipModule, MatTooltip } from '@angular/material/tooltip';
 
 export interface Skill {
   label: string;
@@ -15,4 +15,13 @@ export interface Skill {
 })
 export class SkillIconComponent {
   @Input() skillDets!: Skill;
+  @ViewChild('tooltip') tooltip!: MatTooltip;
+
+  onClick() {
+    this.tooltip.show(2200);
+
+    setTimeout(() => {
+      this.tooltip.hide();
+    }, 2000);
+  }
 }
