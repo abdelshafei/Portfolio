@@ -1,11 +1,12 @@
 import { Component, signal, effect, inject } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser, NgClass } from '@angular/common';
 import { PLATFORM_ID } from '@angular/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-home',
-  imports: [ MatTooltipModule ],
+  imports: [ MatTooltipModule, NgClass ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -77,5 +78,24 @@ export class HomeComponent {
     if (this.isBrowser) {
       this.timeoutId = window.setTimeout(() => this.typeNextCharinterest(), delay);
     }
+  }
+
+  isSpinning = false;
+  timeoutid: ReturnType<typeof setTimeout> | null = null;
+
+  onMouseEnter() {
+
+    if (this.timeoutid) {
+      clearTimeout(this.timeoutid);
+      this.timeoutid = null;
+    }
+
+    this.isSpinning = true;
+  }
+
+  onMouseLeave() {
+    this.timeoutid = setTimeout(() => {
+      this.isSpinning = false;
+    }, 1500); 
   }
 }

@@ -1,6 +1,13 @@
 <div class="Home">
-    <div class="profile-pic-container">
-        <img src="./assets/profile.jpg" alt="Profile picture" class="profile-pic" />
+    <div class="profile-3d" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+        <div class="profile-pic-container" [ngClass]="{'spin-active': isSpinning}">
+            <div class="front">
+                <img src="./assets/profile.jpg" alt="Profile picture" class="profile-pic" />
+            </div>
+            <div class="back">
+                <img src="./assets/profile.jpg" alt="Profile picture" class="profile-pic" />
+            </div>
+        </div>
     </div>
     <div class="about">
         <div class="Paragraphs">

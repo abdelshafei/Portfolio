@@ -1,10 +1,43 @@
-.profile-pic-container {
-  margin: 2rem 0;
-  flex-shrink: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.profile-3d {
+  perspective: 1000px;
+
+  & .profile-pic-container {
+    margin: 2rem 0;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+
+    & .font {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      height: 100%;
+      display: grid;
+    }
+
+    & .back {
+      transform: rotateY(180deg);
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      height: 100%;
+      display: grid;
+    }
+  }
 }
+
+
+.profile-pic-container.spin-active {
+  animation: flippityFlip 2s cubic-bezier(0.1, 0.6, 0.4, 1) forwards;
+}
+
+@keyframes flippityFlip {
+  from { transform: rotateY(0deg); }
+  to   { transform: rotateY(1260deg); }
+}
+
 
 
 .greeting {
@@ -205,15 +238,6 @@
 
 }
 
-@keyframes blink {
-  from, to {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-}
-
 .mailDiv {
   display: flex;
   justify-content: center;
@@ -262,8 +286,8 @@
       transform: translate(0, 0.375em);
 
       &::before {
-        box-shadow: 0 0 0 2px #213D5C, 0 0.7em 0 0 #1F3A59;
-        transform: translate3d(0, 0.7em, -1em);
+        box-shadow: 0 0 0 2px #213D5C, 0 0.6em 0 0 #1F3A59;
+        transform: translate3d(0, 0.6em, -1em);
       }
     }
 
@@ -275,5 +299,14 @@
         box-shadow: 0 0 0 2px #1B3551, 0 0.25em 0 0 #1E3B58;
       }
     }
+  }
+}
+
+@keyframes blink {
+  from, to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
   }
 }
