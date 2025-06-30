@@ -96,6 +96,6 @@ export class HomeComponent {
   onMouseLeave() {
     this.timeoutid = setTimeout(() => {
       this.isSpinning = false;
-    }, 1500); 
+    }, 2000); 
   }
 }
