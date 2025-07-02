@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-timeline',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, NgClass],
   templateUrl: './timeline.component.html',
   styleUrls: ['./timeline.component.scss']
 })
@@ -18,7 +19,9 @@ export class TimelineComponent {
       image: 'https://carleton.ca/brand/wp-content/uploads/brand-logo-800w-1.jpg',
       description: `
       <span> Studying Computer Science with a specialization in Artificial Intelligence and Machine Learning at Carleton University, I've spent the past three years immersing myself in both foundational and advanced topics.</span> 
-      `
+      `,
+      isEmitting: false,
+      timeoutId: null as ReturnType<typeof setTimeout> | null
     },
     {
       status: 'Undergraduate Teaching Assistant',
@@ -28,7 +31,24 @@ export class TimelineComponent {
       image: 'https://carleton.ca/brand/wp-content/uploads/brand-logo-800w-1.jpg',
       description: `
       <span> Teaching assistant for Introduction to Software Engineering (COMP2404) under Dr. Darryl Hill. </span>
-      `
+      `,
+      isEmitting: false,
+      timeoutId: null as ReturnType<typeof setTimeout> | null,
     },
   ];
+
+  onMouseEnter(event:  any) {
+    if (event.timeoutId) {
+      clearTimeout(event.timeoutId);
+      event.timeoutId = null;
+    }
+
+    event.isEmitting = true;
+  }
+
+  onMouseLeave(event: any) {
+    event.timeoutId = setTimeout(() => {
+      event.isEmitting = false;
+    }, 500);
+  }
 }
