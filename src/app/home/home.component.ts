@@ -80,6 +80,7 @@ export class HomeComponent {
   }
 
   isSpinning = false;
+  lock = false;
   timeoutid: ReturnType<typeof setTimeout> | null = null;
 
   onMouseEnter() {
@@ -90,11 +91,14 @@ export class HomeComponent {
     }
 
     this.isSpinning = true;
+    this.lock = false;
   }
 
   onMouseLeave() {
     this.timeoutid = setTimeout(() => {
       this.isSpinning = false;
+      this.lock = true;
     }, 2000); 
   }
+
 }

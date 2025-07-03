@@ -17,4 +17,6 @@ export interface course {
 })
 export class CourseCardComponent {
   @Input() courseDetails!: course;
+
+  
 }

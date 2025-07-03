@@ -34,9 +34,13 @@
   animation: flippityFlip 2s cubic-bezier(0.1, 0.6, 0.4, 1) forwards;
 }
 
+.profile-pic-container.preserve-lock {
+  transform: rotateY(180deg);
+}
+
 @keyframes flippityFlip {
   from { transform: rotateY(0deg); }
-  to   { transform: rotateY(1260deg); }
+  to   { transform: rotateY(900deg); }
 }
 
 
@@ -209,10 +213,6 @@
     & .profile-pic-container {
       height: 100%;
       width: 100%;
-      display: flex;
-      position: relative;
-      justify-content: center;
-      align-items: center;
     }
   }
 

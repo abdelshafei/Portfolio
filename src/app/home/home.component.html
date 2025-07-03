@@ -1,12 +1,12 @@
 <div class="Home">
     <div class="pfp-contain">
         <div class="profile-3d" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
-            <div class="profile-pic-container" [ngClass]="{'spin-active': isSpinning}">
+            <div class="profile-pic-container" [ngClass]="{ 'spin-active': isSpinning, 'preserve-lock': lock }">
                 <div class="front">
                     <img src="./assets/profile.jpg" alt="Profile picture" class="profile-pic" />
                 </div>
                 <div class="back">
-                    <img src="./assets/profile.jpg" alt="Profile picture" class="profile-pic" />
+                    <img src="./assets/profile2.png" alt="Profile picture" class="profile-pic" />
                 </div>
             </div>
         </div>
