@@ -1,4 +1,4 @@
-import { Component, signal, effect, inject } from '@angular/core';
+import { Component, signal, inject } from '@angular/core';
 import { isPlatformBrowser, NgClass } from '@angular/common';
 import { PLATFORM_ID } from '@angular/core';
 import { MatTooltipModule } from '@angular/material/tooltip';

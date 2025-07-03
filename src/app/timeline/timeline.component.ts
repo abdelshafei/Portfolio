@@ -21,6 +21,7 @@ export class TimelineComponent {
       <span> Studying Computer Science with a specialization in Artificial Intelligence and Machine Learning at Carleton University, I've spent the past three years immersing myself in both foundational and advanced topics.</span> 
       `,
       isEmitting: false,
+      isPulsating: false,
       timeoutId: null as ReturnType<typeof setTimeout> | null
     },
     {
@@ -33,6 +34,7 @@ export class TimelineComponent {
       <span> Teaching assistant for Introduction to Software Engineering (COMP2404) under Dr. Darryl Hill. </span>
       `,
       isEmitting: false,
+      isPulsating: false,
       timeoutId: null as ReturnType<typeof setTimeout> | null,
     },
   ];
@@ -44,11 +46,13 @@ export class TimelineComponent {
     }
 
     event.isEmitting = true;
+    event.isPulsating = true;
   }
 
   onMouseLeave(event: any) {
     event.timeoutId = setTimeout(() => {
       event.isEmitting = false;
-    }, 500);
+      event.isPulsating = false;
+    }, 5000);
   }
 }

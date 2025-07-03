@@ -61,8 +61,7 @@
 }
 
 
-.timeline-dot .emit-active {
-  content: "";
+.emit-active {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -76,6 +75,16 @@
   pointer-events: none;
   z-index: 0;
   opacity: 0;
+
+}
+
+.pulse-active {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #d02727;
+  display: block;
+  animation: pulse 1s ease-in-out;
 }
 
 .timeline-item.left .timeline-dot {
@@ -84,11 +93,6 @@
 
 .timeline-item.right .timeline-dot {
   left: -10px;
-}
-
-.timeline-dot .emit-active:hover {
-  animation: pulse 1s ease-in-out;
-  cursor: pointer;
 }
 
 .timeline-content {
