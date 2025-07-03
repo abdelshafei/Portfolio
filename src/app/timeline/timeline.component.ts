@@ -53,6 +53,6 @@ export class TimelineComponent {
     event.timeoutId = setTimeout(() => {
       event.isEmitting = false;
       event.isPulsating = false;
-    }, 5000);
+    }, 1000);
   }
 }
