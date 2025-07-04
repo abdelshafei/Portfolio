@@ -2,7 +2,7 @@
     <div class="pfp-contain">
         <div class="profile-3d" (mouseenter)="toggleSpin()">
             <div class="profile-pic-container" [ngClass]="{ 
-                'front-spin-active': isSpinning && lock == false, 
+                'front-spin-active': isSpinning && !lock, 
                 'back-spin-active': isSpinning && lock,
                 'preserve-back': !isSpinning && lock,
                 'preserve-front': !isSpinning && !lock

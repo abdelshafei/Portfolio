@@ -80,7 +80,7 @@ export class HomeComponent {
   }
 
   isSpinning = false;
-  lock = false;
+  lock = true;
   timeoutid: ReturnType<typeof setTimeout> | null = null;
 
   toggleSpin(): void {
