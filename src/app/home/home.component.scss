@@ -30,17 +30,30 @@
 }
 
 
-.profile-pic-container.spin-active {
-  animation: flippityFlip 2s cubic-bezier(0.1, 0.6, 0.4, 1) forwards;
+.profile-pic-container.back-spin-active {
+  animation: flippityFlipb 2s cubic-bezier(0.1, 0.6, 0.4, 1) forwards;
 }
 
-.profile-pic-container.preserve-lock {
+.profile-pic-container.front-spin-active {
+  animation: flippityFlipf 2s cubic-bezier(0.1, 0.6, 0.4, 1) forwards;
+}
+
+.profile-pic-container.preserve-front {
   transform: rotateY(180deg);
 }
 
-@keyframes flippityFlip {
+.profile-pic-container.preserve-back {
+  transform: rotateY(0deg);
+}
+
+@keyframes flippityFlipb {
   from { transform: rotateY(0deg); }
   to   { transform: rotateY(900deg); }
+}
+
+@keyframes flippityFlipf {
+  from { transform: rotateY(180deg); }
+  to   { transform: rotateY(1080deg); }
 }
 
 

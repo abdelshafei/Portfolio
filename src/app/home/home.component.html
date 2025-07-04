@@ -1,7 +1,12 @@
 <div class="Home">
     <div class="pfp-contain">
-        <div class="profile-3d" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
-            <div class="profile-pic-container" [ngClass]="{ 'spin-active': isSpinning, 'preserve-lock': lock }">
+        <div class="profile-3d" (mouseenter)="toggleSpin()">
+            <div class="profile-pic-container" [ngClass]="{ 
+                'front-spin-active': isSpinning && lock == false, 
+                'back-spin-active': isSpinning && lock,
+                'preserve-back': !isSpinning && lock,
+                'preserve-front': !isSpinning && !lock
+            }">
                 <div class="front">
                     <img src="./assets/profile.jpg" alt="Profile picture" class="profile-pic" />
                 </div>
@@ -59,7 +64,7 @@
         <div class="mailDiv">
             <a href="mailto:ar.elshafei@gmail.com?subject=Job Opportunity&amp;body=Hello Abdelrahman,%0D%0A%0D%0AWe came across your portfolio and are interested in discussing a potential opportunity with you.%0D%0A%0D%0ABest regards,%0D%0A[Your Name]"
             class="mailto">
-                Hire me
+                Get in touch
                 <img style="padding-left: 9px" src="https://www.svgrepo.com/show/475852/paper-plane.svg" width="25px" height="25px"/>
             </a>
         </div>
