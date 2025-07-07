@@ -130,6 +130,13 @@
   padding: 2rem 3rem;
   flex-wrap: nowrap; 
   min-height: 100vh;
+  background: repeating-linear-gradient(
+    135deg,
+    #1f222c,
+    #1f222c 40px,
+    #2a2e39 40px,
+    #2a2e39 80px
+  );
 }
 
 .links {

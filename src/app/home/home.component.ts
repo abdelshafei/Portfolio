@@ -19,7 +19,7 @@ import { trigger, transition, style, animate } from '@angular/animations';
     trigger('AboutFadeIn', [
       transition(':enter', [
         style({opacity: 0, transform: 'translateX(120px)'}),
-        animate('0.8s cubic-bezier(.35, 1.65, .63, 1.02)', style({opacity: 1, transform: 'translateX(0)'}))
+        animate('0.8s cubic-bezier(.34,1.56,.63,1.19)', style({opacity: 1, transform: 'translateX(0)'}))
       ])
     ])
   ]
@@ -109,7 +109,7 @@ export class HomeComponent {
     this.timeoutid = setTimeout(() => {
       this.isSpinning = false;
       this.lock = !this.lock;
-    }, 2000); 
+    }, 1800); 
   }
 
 }
