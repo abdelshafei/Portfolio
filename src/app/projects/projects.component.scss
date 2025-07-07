@@ -37,6 +37,11 @@
     &:hover {
         cursor:  pointer;
     }
+
+    & i .fa-solid.fa-circle-info::before {
+        height: 100px; 
+        width: 100px;
+    }
 }
 
 .title {

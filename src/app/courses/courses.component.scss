@@ -11,7 +11,7 @@
 }
 
 .course-item {
-  flex: 1 1 300px; /* each card takes up space but can shrink */
+  flex: 1 1 300px; 
   max-width: 350px;
 }
 
@@ -21,7 +21,18 @@
   align-items: center;
   height: 600px;
   gap: 4rem; 
-  padding: 0 1rem;
   overflow-y: hidden;
   overflow-x: scroll;
+}
+
+@media(max-width: 500px) {
+  .body-courses {
+    gap: 4.2rem;
+  }
+}
+
+@media(max-width: 375px) {
+  .body-courses {
+    gap: 2.4rem;
+  }
 }

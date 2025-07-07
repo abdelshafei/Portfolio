@@ -2,19 +2,34 @@ import { Component, signal, inject } from '@angular/core';
 import { isPlatformBrowser, NgClass } from '@angular/common';
 import { PLATFORM_ID } from '@angular/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-home',
   imports: [ MatTooltipModule, NgClass ],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
+  animations: [
+    trigger('PhotoFadeIn', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateY(30px)' }),
+        animate('1s ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
+      ])
+    ]),
+    trigger('AboutFadeIn', [
+      transition(':enter', [
+        style({opacity: 0, transform: 'translateX(120px)'}),
+        animate('0.8s cubic-bezier(.35, 1.65, .63, 1.02)', style({opacity: 1, transform: 'translateX(0)'}))
+      ])
+    ])
+  ]
 })
 export class HomeComponent {
   private platformId = inject(PLATFORM_ID);
   private isBrowser = isPlatformBrowser(this.platformId);
 
-  private AuthorName: string = 'Hi, I\'m Abdelrahman ElShafay!';
-  displayAuthorName = signal('');
+  private AuthorName: string = 'Abdelrahman ElShafay';
+  displayAuthorName = signal('Abdelrahman ElShafay');
   private indexAuthor: number = 0;
 
   private phrases = [
@@ -31,7 +46,7 @@ export class HomeComponent {
   private timeoutId: number | null = null;
 
   ngOnInit(): void {
-    this.typeNextCharAuth(); 
+    // this.typeNextCharAuth(); 
     this.indexAuthor = 0;
 
     this.typeNextCharinterest();
@@ -43,15 +58,15 @@ export class HomeComponent {
     }
   }
 
-  private typeNextCharAuth() {
-    if (this.indexAuthor < this.AuthorName.length) {
-      setTimeout(() => {
-        this.displayAuthorName.set(this.displayAuthorName() + this.AuthorName[this.indexAuthor]);
-        this.indexAuthor++;
-        this.typeNextCharAuth();
-      }, 100);
-    }
-  }
+  // private typeNextCharAuth() {
+  //   if (this.indexAuthor < this.AuthorName.length) {
+  //     setTimeout(() => {
+  //       this.displayAuthorName.set(this.displayAuthorName() + this.AuthorName[this.indexAuthor]);
+  //       this.indexAuthor++;
+  //       this.typeNextCharAuth();
+  //     }, 100);
+  //   }
+  // }
 
   private typeNextCharinterest(): void {
     const currentPhrase = this.phrases[this.currentPhraseIndex];

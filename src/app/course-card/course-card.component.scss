@@ -13,12 +13,12 @@
         padding: 20px;
         box-sizing: border-box;
         transition: .8s;
-        transform: translateY(-95px);
+        transform: translateY(-160px);
         box-shadow: 0 40px 40px rgba(0, 0, 0, 0.7);
     }
 
     &:hover .bottom {
-        transform: translateY(0);
+        transform: translateY(-35px);
     }
 
     & .top {
@@ -27,11 +27,11 @@
         align-items: center;
         z-index: 1;
         transition: .7s;
-        transform: translateY(95px); 
+        transform: translateY(30px); 
     }
 
     &:hover .top {
-        transform: translateY(0px);
+        transform: translateY(-30px);
     }
 
 }

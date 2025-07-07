@@ -1,6 +1,6 @@
 <div class="Home">
     <div class="pfp-contain">
-        <div class="profile-3d" (mouseenter)="toggleSpin()">
+        <div @PhotoFadeIn class="profile-3d" (mouseenter)="toggleSpin()">
             <div class="profile-pic-container" [ngClass]="{ 
                 'front-spin-active': isSpinning && !lock, 
                 'back-spin-active': isSpinning && lock,
@@ -16,9 +16,9 @@
             </div>
         </div>
     </div>
-    <div class="about">
+    <div @AboutFadeIn class="about">
         <div class="Paragraphs">
-            <span class="greeting">{{ displayAuthorName() }}<span class="cursor">|</span></span>
+            <span class="greeting"><span class="intro">Hello, I'm</span>{{ displayAuthorName() }}</span>
             <br>
             <span style="color: white">Passionate about:</span>
             <br>
