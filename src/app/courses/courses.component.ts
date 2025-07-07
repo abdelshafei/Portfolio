@@ -61,7 +61,7 @@ export class CoursesComponent {
   {
     title: 'Operating Systems',
     code: '(COMP 3000)',
-    description: 'Explored the fundamentals of the Linux kernel, including but not limited to process/memory management, file systems, and kernel module development such as device drivers.',
+    description: 'Explored the fundamentals of the Linux kernel, including but not limited to process/memory management, file systems, and kernel module development such as character devices.',
     date: 'Jan 2025 - April 2025',
     grade: 'A+',
     skills: 'C, Linux, Kernel Modules, Concurrency Programming, Docker' 

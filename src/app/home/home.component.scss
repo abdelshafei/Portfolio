@@ -60,11 +60,20 @@
 
 .greeting {
   color: #f4ea7c;
-  text-shadow: 0 0px 20px #d6cd6d;
+  // text-shadow: 0 0px 20px #d6cd6d;
+  animation: neon 2s ease-in-out infinite alternate;
   font-size: 35px !important;
   font-weight: 800;
   display: inline-block;
   text-align: center;
+}
+
+@keyframes neon {
+  from {
+    text-shadow: 0 0px 20px #d6cd6d;
+  } to {
+    text-shadow: 0 0px 5px #d6cd6d;
+  }
 }
 
 .intro {
