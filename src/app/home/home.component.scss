@@ -257,10 +257,12 @@
   }
 
   .Home {
-    display: inline;
+    flex-direction: column; 
+    align-items: center;    
+    justify-content: center; 
+    gap: 2rem;               
     flex-wrap: wrap;
     justify-items: column;
-
   }
 
   .greeting {
