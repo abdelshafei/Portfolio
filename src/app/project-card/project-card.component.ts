@@ -8,6 +8,7 @@ export interface project {
   skills: string;
   gitLink: string;
   ytLink: string | null;
+  img: string;
 };
 
 

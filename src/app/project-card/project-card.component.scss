@@ -12,8 +12,8 @@
 
     & .card {
       position: relative;
-      width: 416px;
-      height: 350px; 
+      width: 350px;
+      height: 450px; 
       transform-style: preserve-3d;
       transition: transform 0.6s, box-shadow 0.3s ease;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -27,6 +27,9 @@
             backface-visibility: hidden;
             height: 100%;
             display: grid;
+            background-size:contain;
+            background-position: center;
+            background-repeat: no-repeat;
 
             & .header {
                 display: flex;
@@ -82,6 +85,9 @@
             position: absolute;
             inset: 0;
             backface-visibility: hidden;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         
@@ -138,8 +144,8 @@
 
 @media (max-width: 800px) { 
     .card-container .card {
-      width: 406px; 
-      height: 300px; 
+      width: 300px; 
+      height: 406px; 
 
       & .card-front .header span{
         font-size: large;
@@ -153,8 +159,8 @@
 
 @media (max-width: 500px) { 
     .card-container .card {
-      width: 350px; 
-      height: 290px; 
+      width: 290px; 
+      height: 350px; 
 
       & .card-front .header span{
         font-size: medium;

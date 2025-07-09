@@ -12,6 +12,7 @@ interface Project {
   skills: string;
   gitLink: string;
   ytLink: string | null;
+  img: string;
 }
 
 @Component({
@@ -27,7 +28,8 @@ export class ProjectsComponent {
     date: 'Oct 2024 - Dec 2024',
     skills: 'Angular16, Node.js, SQLite, REST, RxJS, Typescript, Javascript',
     gitLink: 'https://github.com/abdelshafei/iTunesfy',
-    ytLink: 'https://youtu.be/JBTTAJZrjFo'
+    ytLink: 'https://youtu.be/JBTTAJZrjFo',
+    img: ''
   },
   {
     header: 'BMP280 Device Driver',
@@ -35,7 +37,8 @@ export class ProjectsComponent {
     date: 'June 2025 - June 2025',
     skills: 'Linux Kernel, RaspberryPi, C, Sysfs, Manual configuration of registers by *.i2c.smbus API calls, Device Driver operations',
     gitLink: 'https://github.com/abdelshafei/BMP280-device-driver',
-    ytLink: 'https://youtu.be/1EwXVq_9rCo'
+    ytLink: 'https://youtu.be/1EwXVq_9rCo',
+    img: ''
   },
   {
     header: 'Chatting App',
@@ -43,7 +46,8 @@ export class ProjectsComponent {
     date: 'April 2024 - May 2024',
     skills: 'HTML, CSS, Javascript, Node.js, WebSockets',
     gitLink: 'https://github.com/abdelshafei/ChattingApp',
-    ytLink: null
+    ytLink: null,
+    img: ''
   },
   {
     header: 'ASCII Camera',
@@ -51,7 +55,8 @@ export class ProjectsComponent {
     date: 'May 2025 - June 2025',
     skills: 'Python, OpenCV',
     gitLink: 'https://github.com/abdelshafei/ASCII-Camera',
-    ytLink: 'https://www.youtube.com/watch?v=ggeKsc3IKwk'
+    ytLink: 'https://www.youtube.com/watch?v=ggeKsc3IKwk',
+    img: ''
   },
   {
     header: 'RaDoTech Simulation',
@@ -59,7 +64,8 @@ export class ProjectsComponent {
     date: 'Oct 2024 - Dec 2024',
     skills: 'Qt, C++, Agile Methodologies',
     gitLink: 'https://github.com/ParamDesai111/3004-Final-Project',
-    ytLink: null
+    ytLink: null,
+    img: ''
   },
   {
     header: 'Ghost Hunter Simulation',
@@ -67,7 +73,8 @@ export class ProjectsComponent {
     date: 'Nov 2023 - Dec 2023',
     skills: 'C, Multi-threads, Data Structures',
     gitLink: 'https://github.com/abdelshafei/GhostHuntSimulator',
-    ytLink: null
+    ytLink: null,
+    img: ''
   },
   { 
     header: 'Syntax Interpreter',
@@ -75,7 +82,8 @@ export class ProjectsComponent {
     date: 'Dec 2024 - Jan 2025',
     skills: 'C++, Token Parser, Abstract Syntax Tree',
     gitLink: 'https://github.com/abdelshafei/CodeInterpreter',
-    ytLink: null
+    ytLink: null,
+    img: ''
   },
   {
     header: 'Distance Notifier',
@@ -83,7 +91,8 @@ export class ProjectsComponent {
     date: 'May 2025 - June 2025',
     skills: 'C, Arduino Uno, HC-SR04 Ultrasonic Sensor, Common-cathode RGB LED, Piezo Buzzer',
     gitLink: 'https://github.com/abdelshafei/Distance-Sensor',
-    ytLink: 'https://wokwi.com/projects/433297984977377281'
+    ytLink: 'https://wokwi.com/projects/433297984977377281',
+    img: ''
   }];
 
   @ViewChild('tooltip') tooltip!: MatTooltip;

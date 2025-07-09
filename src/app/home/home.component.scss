@@ -60,7 +60,6 @@
 
 .greeting {
   color: #f4ea7c;
-  // text-shadow: 0 0px 20px #d6cd6d;
   animation: neon 2s ease-in-out infinite alternate;
   font-size: 35px !important;
   font-weight: 800;
@@ -70,14 +69,14 @@
 
 @keyframes neon {
   from {
-    text-shadow: 0 0px 20px #d6cd6d;
+    text-shadow: 0 0px 10px #d6cd6d;
   } to {
-    text-shadow: 0 0px 5px #d6cd6d;
+    text-shadow: 0 0px 3px #d6cd6d;
   }
 }
 
 .intro {
-  color:rgb(124, 125, 126);
+  color:rgb(207, 218, 229);
   text-shadow: none !important;
 }
 
@@ -118,7 +117,7 @@
 
 .interests {
   font-family: "Times New Roman", Times, serif;
-  color: rgb(208, 78, 78);
+  color: #a5ff9a;
   font-size: 24px !important;
   font-weight: 600;
   display: inline-block;
@@ -293,6 +292,12 @@
   margin-bottom: 40px;
   height: 50px;
 
+  & svg {
+    stroke: #F2F2F2;
+    opacity: 0.8;
+    margin-left: 10px;
+  }
+
   & .mailto {
     position: relative;
     display: inline-flex;
@@ -307,9 +312,9 @@
     font-family: inherit;
 
     padding: 1em 2em;
-    border: 2px solid #234A72;
+    border: 2px solid #3166c3;
     border-radius: 1em;
-    background: #2D5A88;
+    background: #458bff;
     transform-style: preserve-3d;
     transition: all 175ms cubic-bezier(0, 0, 1, 1);
 
@@ -322,15 +327,15 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: #27486E;
+      background: #2d4d73;
       border-radius: inherit;
-      box-shadow: 0 0 0 2px #264468, 0 0.8em 0 0 #203a58;
+      box-shadow: 0 0 0 2px #2d4d73, 0 0.8em 0 0 #233c5b;
       transform: translate3d(0, 0.8em, -1em);
       transition: all 175ms cubic-bezier(0, 0, 1, 1);
     }
 
     &:hover {
-      background: #3B6FA1;
+      background: #3d7bd9;
       transform: translate(0, 0.375em);
 
       &::before {

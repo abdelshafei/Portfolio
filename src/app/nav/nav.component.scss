@@ -43,6 +43,7 @@
 
     .ref {
       color: white;
+      z-index: 2;
       text-decoration: none;
       font-family: sans-serif;
       font-size: 18px;
@@ -82,11 +83,11 @@
 
       &:hover {
         color: rgb(30, 29, 29);
-      }
 
-      &:hover:after, &:hover:before {
+        &::after, &::before{
           transform: scaleY(1);
           opacity: 1;
+        }
       }
     }
   }

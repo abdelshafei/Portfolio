@@ -1,13 +1,22 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgClass } from '@angular/common';
+import { trigger, transition, style, animate, state } from '@angular/animations';
 
 @Component({
   selector: 'app-timeline',
   standalone: true,
   imports: [CommonModule, NgClass],
   templateUrl: './timeline.component.html',
-  styleUrls: ['./timeline.component.scss']
+  styleUrls: ['./timeline.component.scss'],
+  animations: [ 
+  trigger('scrollDotFade', [
+    state('visible', style({ opacity: 1, transform: 'translateY(0)' })),
+    state('hidden', style({ opacity: 0, transform: 'translateY(30px)' })),
+    transition('hidden => visible', animate('500ms ease-out')),
+    transition('visible => hidden', animate('300ms ease-in'))
+    ])
+  ]
 })
 export class TimelineComponent {
     events = [
