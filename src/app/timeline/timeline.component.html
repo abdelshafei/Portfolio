@@ -4,7 +4,7 @@
     <div class="timeline-line"></div>
     <div class="timeline-item" *ngFor="let event of events; let i = index" 
          [class.left]="i % 2 === 0" [class.right]="i % 2 !== 0">  <!-- Alternates the timeline components-->
-      <div class="timeline-dot" (mouseenter)="onMouseEnter(event)" (mouseleave)="onMouseLeave(event)" [ngClass]="{'pulse-active' : event.isPulsating}">
+      <div @scrollDotFade class="timeline-dot" (mouseenter)="onMouseEnter(event)" (mouseleave)="onMouseLeave(event)" [ngClass]="{'pulse-active' : event.isPulsating}">
         <span [ngClass]="{'emit-active' : event.isEmitting}"></span>
       </div>
       <div class="timeline-content">
