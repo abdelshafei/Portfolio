@@ -104,7 +104,7 @@ export class ProjectsComponent {
     img: ''
   },
   {
-    header: 'Rat archiver',
+    header: 'Rat Archiver',
     description: 'A Rust-based archiver that packs regular files, symlinks, and hard links into compressed .rat archives. Modeled after the Unix tar utility, with added support for serialization and size-efficient storage.',
     date: 'May 2025 - July 2025',
     skills: 'Rust, Linux, File I/O, Serialization, Deserialization, Binary Encoding, Compression Algorithms',
