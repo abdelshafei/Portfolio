@@ -93,7 +93,26 @@ export class ProjectsComponent {
     gitLink: 'https://github.com/abdelshafei/Distance-Sensor',
     ytLink: 'https://wokwi.com/projects/433297984977377281',
     img: ''
-  }];
+  },
+  {
+    header: 'Distributed FileSystem',
+    description: 'A distributed filesystem hosted on a centeralized and multi-threaded server making it accessible by multiple clients.',
+    date: 'May 2025 - July 2025',
+    skills: 'C, Linux, FUSE, TCP/IP, Multi-threads',
+    gitLink: 'https://github.com/ak1lly/shared-folder-over-network',
+    ytLink: null,
+    img: ''
+  },
+  {
+    header: 'Rat archiver',
+    description: 'A Rust-based archiver that packs regular files, symlinks, and hard links into compressed .rat archives. Modeled after the Unix tar utility, with added support for serialization and size-efficient storage.',
+    date: 'May 2025 - July 2025',
+    skills: 'Rust, Linux, File I/O, Serialization, Deserialization, Binary Encoding, Compression Algorithms',
+    gitLink: 'https://github.com/abdelshafei/rat',
+    ytLink: null,
+    img: ''
+  }
+];
 
   @ViewChild('tooltip') tooltip!: MatTooltip;
 

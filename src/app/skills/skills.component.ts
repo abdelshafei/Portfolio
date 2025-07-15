@@ -88,6 +88,10 @@ export class SkillsComponent {
   {
     label: 'Scheme',
     src: './assets/racket-4.svg'
+  },
+  {
+    label: 'Rust',
+    src: 'https://rust-lang.org/logos/rust-logo-512x512.png'
   }
   ];
 
