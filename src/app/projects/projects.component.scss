@@ -24,10 +24,27 @@
 }
 
 .label {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: bold;
-    flex: 1;
+ text-align: left;
+  margin-left: 70px;
+  margin-bottom: 27px;
+  margin-top: 27px;
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ccd6f6;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30%;
+    height: 2px;
+    margin-left: 30px;
+    background-color: #4d607f;
+    border-radius: 10px;
+  }
 }
 
 .info-icon {
@@ -47,18 +64,5 @@
 }
 
 .title {
-  text-align: center;
-//   background-color: #333437;
-  display: flex;
-  justify-content: center; 
-  align-items: center;
   position: relative;
-
-
-  span {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: xx-large;
-    font-weight: bold;
-    color: #ccd6f6;
-  }
 }
