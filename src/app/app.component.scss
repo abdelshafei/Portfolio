@@ -80,7 +80,7 @@
       padding-right: 14px;
     }
 
-    &:before {
+    &::before {
       content: '';
       position: absolute;
       top:4px;
@@ -91,9 +91,10 @@
       transition: 0.5s;
       transform: rotate(0deg) skewY(-45deg);
       z-index: 2;
+      pointer-events: none;
     }
 
-    &:after {
+    &::after {
       content: '';
       position: absolute;
       bottom:-8px;
@@ -104,6 +105,7 @@
       transition: 0.5s;
       transform: rotate(-180deg) skewX(-45deg);
       z-index: 2;
+      pointer-events: none;
     }
 
     &:hover {
@@ -115,10 +117,10 @@
       & span {
         color:#333 !important;
       }
-    }
 
-    &:hover:after, &:hover:before {
-      background: #b1b1b1 !important;
+      &::after, &::before {
+        background: #b1b1b1 !important;
+      }
     }
   }
 }

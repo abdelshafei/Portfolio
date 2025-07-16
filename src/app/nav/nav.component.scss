@@ -63,6 +63,7 @@
         transform: scaleY(2);
         opacity: 0;
         transition: .3s;
+        pointer-events: none;
       }
 
       &::after {
@@ -77,6 +78,7 @@
         opacity: 0;
         transition: .3s;
         z-index: -1;
+        pointer-events: none;
       }
 
       &:hover {
