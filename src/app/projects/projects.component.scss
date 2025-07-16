@@ -1,5 +1,5 @@
 .body-proj {
-    background:#333437;
+    // background:#333437;
     min-height: 100vh;
     border-top: 2px solid rgba(0, 0, 0, 0.05);
 
@@ -34,7 +34,7 @@
     position: absolute;
     right: 1rem; 
     font-size: 1.2rem;
-    color: #333; 
+    color: #ccd6f6; 
 
     &:hover {
         cursor:  pointer;
@@ -48,7 +48,7 @@
 
 .title {
   text-align: center;
-  background-color: #333437;
+//   background-color: #333437;
   display: flex;
   justify-content: center; 
   align-items: center;
@@ -59,6 +59,6 @@
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: xx-large;
     font-weight: bold;
-    color: #d5c9c9;
+    color: #ccd6f6;
   }
 }

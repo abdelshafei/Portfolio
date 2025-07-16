@@ -4,7 +4,7 @@
 
 .card-container {
     perspective: 1000px;
-    background-color: #333437;
+    // background-color: #333437;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,7 +18,7 @@
       transition: transform 0.6s, box-shadow 0.3s ease;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       border-radius: 20px;
-      background-color:#d5c9c9;
+      background-color:#685ea5;;
 
 
         & .card-front{ 
@@ -41,7 +41,7 @@
                 & span {
                     font-family:Georgia, 'Times New Roman', Times, serif;
                     font-size: x-large;
-                    color: #243146 !important;
+                    color: #c4cddc !important;
                 }
             }
 
@@ -57,7 +57,7 @@
                 & span {
                     font-weight: 100;
                     font-size: medium;
-                    color: #533838;
+                    color: #ffffff;
                 }
             }
 
@@ -73,7 +73,7 @@
                     margin: 0;
                     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
                     font-size: 0.7rem;
-                    color: #206187;
+                    color: #4bb8f7;
                     font-style: italic;
                 }
 
@@ -128,12 +128,13 @@
   text-align: center;
   gap: 1rem;                  
 
-  .label   { font-weight: 600; font-size: 1.1rem; }
-  .content { font-weight: 100; }
+  .label   { font-weight: 600; font-size: 1.1rem; color: rgb(255, 255, 255)}
+  .content { font-weight: 100; color: rgb(199, 191, 191)}
 }
 
 .github, .yt-link {
     display: inline-block;
+    
 }
 
 .card-container:hover .card {
