@@ -20,13 +20,15 @@ import { animate, onScroll } from 'animejs';
   // ]
 })
 export class TimelineComponent {
-    events = [
+  constructor() {}
+
+  events = [
     {
       status: 'Studying at Carleton University',
       date: '2022',
       color: '#FAFAFA',
       description: `
-      <span> Studying Computer Science with a specialization in Artificial Intelligence and Machine Learning at Carleton University, I've spent the past three years immersing myself in both foundational and advanced topics.</span> 
+      Studying Computer Science with a specialization in Artificial Intelligence and Machine Learning at Carleton University, I've spent the past three years immersing myself in both foundational and advanced topics. I'm currently in my final year and expect to graduate in May 2027. 
       `,
       dotImg: 'https://cdn-icons-png.freepik.com/512/7655/7655404.png'
     },
@@ -35,7 +37,7 @@ export class TimelineComponent {
       date: '2025',
       color: '#FAFAFA',
       description: `
-      <span> Teaching assistant for Introduction to Software Engineering (COMP2404) under Dr. Darryl Hill. </span>
+      From January to April 2025, I assisted Dr. Darryl Hill in teaching COMP2404: Introduction to Software Engineering. I led weekly tutorials and office hours, helping students strengthen their understanding of C++ concepts like object-oriented programming and data structures, while also supporting assignment guidance and troubleshooting.
       `,
       dotImg: 'https://cdn-icons-png.freepik.com/512/7527/7527819.png'
     },
