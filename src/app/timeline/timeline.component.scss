@@ -146,7 +146,13 @@
   }
   .timeline-item.left .timeline-dot,
   .timeline-item.right .timeline-dot {
-    left: 10px;
+    left: 5px;
+  }
+
+  .timeline-item.left .timeline-date,
+  .timeline-item.right .timeline-date {
+    left: 30px;
+    top: -5px;
   }
 
   .timeline-body {
