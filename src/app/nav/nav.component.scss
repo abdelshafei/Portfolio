@@ -1,4 +1,10 @@
 .NavigationBar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,6 +16,16 @@
   font-family: 'Segoe UI', sans-serif;
   position: fixed;
   width: 100%;
+
+  &.hide-nav {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  &.expose-nav {
+    transform: translateY(0);
+    opacity: 1;
+  }
 
 
   .nav-content {

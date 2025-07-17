@@ -36,4 +36,22 @@ export class NavComponent implements OnInit {
       }
     }
   }
+
+    lastScrollTop = 0;
+  navHidden = false;
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > this.lastScrollTop && currentScroll > 300) {
+      // Scrolling down
+      this.navHidden = true;
+    } else {
+      // Scrolling up
+      this.navHidden = false;
+    }
+
+    this.lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+  }
 }

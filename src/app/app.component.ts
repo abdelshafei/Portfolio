@@ -32,7 +32,7 @@ export class AppComponent {
   onWindowScroll() {
     const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (currentScroll > this.lastScrollTop) {
+    if (currentScroll > this.lastScrollTop && currentScroll > 300) {
       // Scrolling down
       this.navHidden = true;
     } else {
