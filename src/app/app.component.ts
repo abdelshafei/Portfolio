@@ -22,6 +22,5 @@ export class AppComponent {
 
   openForm() {
     this.openContact = true;
-    // works!
   }
 }

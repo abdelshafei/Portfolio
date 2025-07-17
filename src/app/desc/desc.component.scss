@@ -1,7 +1,8 @@
 .title {
   text-align: left;
-  margin-left: 140px;
+  margin-left: 70px;
   margin-bottom: 27px;
+  margin-top: 27px;
 
   font-family: 'Poppins', sans-serif;
   font-size: 2rem;
@@ -21,19 +22,9 @@
   }
 }
 
-.icons {
-    // height: 40vh;
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 8rem;
-    max-width: 80%;
-    margin: 0 auto;
-}
-
-@media (max-width: 800px) { 
-  .icons {
-    gap: 2rem;
-  }
+.desc {
+    text-align: center;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin: 100px;
 }

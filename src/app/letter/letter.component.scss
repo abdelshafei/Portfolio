@@ -1,0 +1,26 @@
+    span#hover {
+        color: whitesmoke;
+        font-size: 1.5rem;
+        transition: font-size 0.7s ease, text-transform 0.7s ease,;
+        cursor: pointer;
+
+        &:hover {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            color: rgb(202, 69, 16);
+            text-shadow:
+                1px 1px 0 #555,
+                2px 2px 0 #444,
+                3px 3px 0 #333,
+                4px 4px 0 #222,
+                5px 5px 0 #111;
+            }
+
+
+    }
+
+    span#nohover {
+        color: whitesmoke;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
