@@ -22,49 +22,23 @@ import { animate, onScroll } from 'animejs';
 export class TimelineComponent {
     events = [
     {
-      status: 'Studying in Carleton University',
-      startDate: 'Sept 2022',
-      endDate: 'Graduation Expected May 2027',
+      status: 'Studying at Carleton University',
+      date: '2022',
       color: '#FAFAFA',
-      image: 'https://carleton.ca/brand/wp-content/uploads/brand-logo-800w-1.jpg',
       description: `
       <span> Studying Computer Science with a specialization in Artificial Intelligence and Machine Learning at Carleton University, I've spent the past three years immersing myself in both foundational and advanced topics.</span> 
       `,
-      isEmitting: false,
-      isPulsating: false,
-      timeoutId: null as ReturnType<typeof setTimeout> | null
+      dotImg: 'https://cdn-icons-png.freepik.com/512/7655/7655404.png'
     },
     {
       status: 'Undergraduate Teaching Assistant',
-      startDate: 'Jan 2025',
-      endDate: 'April 2025',
+      date: '2025',
       color: '#FAFAFA',
-      image: 'https://carleton.ca/brand/wp-content/uploads/brand-logo-800w-1.jpg',
       description: `
       <span> Teaching assistant for Introduction to Software Engineering (COMP2404) under Dr. Darryl Hill. </span>
       `,
-      isEmitting: false,
-      isPulsating: false,
-      timeoutId: null as ReturnType<typeof setTimeout> | null,
+      dotImg: 'https://cdn-icons-png.freepik.com/512/7527/7527819.png'
     },
   ];
-
-  onMouseEnter(event:  any) {
-    if (event.timeoutId) {
-      clearTimeout(event.timeoutId);
-      event.timeoutId = null;
-    }
-
-    event.isEmitting = true;
-    event.isPulsating = true;
-  }
-
-  onMouseLeave(event: any) {
-    event.timeoutId = setTimeout(() => {
-      event.isEmitting = false;
-      event.isPulsating = false;
-    }, 1000);
-  }
-
 
 }

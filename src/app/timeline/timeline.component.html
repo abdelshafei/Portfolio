@@ -4,16 +4,15 @@
     <div class="timeline-line"></div>
     <div class="timeline-item" *ngFor="let event of events; let i = index" 
          [class.left]="i % 2 === 0" [class.right]="i % 2 !== 0">  <!-- Alternates the timeline components-->
-      <div class="timeline-dot" (mouseenter)="onMouseEnter(event)" (mouseleave)="onMouseLeave(event)" [ngClass]="{'pulse-active' : event.isPulsating}">
-        <span [ngClass]="{'emit-active' : event.isEmitting}"></span>
+      <div class="timeline-date"><span>{{event.date}}</span></div>
+      <div class="timeline-dot">
+        <img [src]="event.dotImg"/>
       </div>
       <div class="timeline-content">
         <div class="timeline-header">
           <h3>{{ event.status }}</h3>
-          <p class="date">{{ event.startDate }} - {{ event.endDate }}</p>
         </div>
         <div class="timeline-body">
-          <img *ngIf="event.image" [src]="event.image" [alt]="event.status" class="timeline-image">
           <div [innerHTML]="event.description"></div>
         </div>
       </div>
