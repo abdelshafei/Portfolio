@@ -123,12 +123,12 @@
   display: inline-block;
 }
 
-.interests .cursor {
+.cursor {
   display: inline-block;
-  font-size: 30px !important;
-  animation: blink 1s step-end infinite;
+  font-size: 28px !important;
+  border-radius: 0.2rem;
+  animation: blink 1s ease-in-out infinite;
   margin-left: 0rem !important;
-
 }
 
 .Home {
@@ -374,10 +374,40 @@
 }
 
 @keyframes blink {
-  from, to {
-    opacity: 1;
+  0% {
+    opacity: 0.99953;
+  }
+  10% {
+    opacity: 0.97867 ;
+  }
+  20% {
+    opacity: 0.88387;
+  }
+  30% {
+    opacity: 0.82556;
+  } 
+  40% {
+    opacity: 0.75684;
   }
   50% {
+    opacity: 0.62995;
+  }
+  60% {
+    opacity: 0.51234;
+  } 
+  70% {
+    opacity: 0.45624;
+  }
+  80% {
+    opacity: 0.23134;
+  } 
+  90% {
+    opacity: 0.12380;
+  }
+  95% {
+    opacity: 0.00342;
+  }
+  100% {
     opacity: 0;
   }
 }

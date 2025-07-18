@@ -8,14 +8,12 @@ span.hover {
     &:hover {
         font-size: 2rem;
         font-synthesis: none;
-        text-rendering:optimizeLegibility;
-        // transform: scale(1.5);   
+        text-rendering:optimizeLegibility;   
         text-transform: uppercase;
         color: #be2f1c;
         text-shadow:
             1px 1px 0 #3c3c3c,
             2px 2px 0 #3c3c3c;
-        // padding: 0.3rem; // consistent per letter box
         
     }
 
