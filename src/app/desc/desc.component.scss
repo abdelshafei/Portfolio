@@ -27,19 +27,11 @@
     margin-left: 100px;
     margin-right: 100px;
     margin: 100px;
-    letter-spacing: 0.09rem;
     line-height: 2.5rem;
-}
-
-@media (max-width: 625px) {
-    .desc {
-        letter-spacing: 0.7px;
-    }
 }
 
 @media (max-width: 515px) {
     .desc {
-        letter-spacing: 0.5px;
         margin-left: 50px;
         margin-right: 50px;
     }
