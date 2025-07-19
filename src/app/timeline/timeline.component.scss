@@ -188,3 +188,15 @@
     border-width: 0px;
   }
 }
+
+@media (max-width: 548px) {
+  .desc {
+    text-align: center;
+    margin-left: 0px;
+
+    &::after {
+      display: none;
+    }
+  }
+  
+}

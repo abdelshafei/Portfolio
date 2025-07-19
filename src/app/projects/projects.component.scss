@@ -65,3 +65,13 @@
 .title {
   position: relative;
 }
+
+@media (max-width: 548px) {
+  .label {
+    text-align: center;
+    margin-left:0px;
+    &::after {
+        display: none;
+    }
+   }
+}

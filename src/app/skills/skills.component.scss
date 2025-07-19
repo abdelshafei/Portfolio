@@ -37,3 +37,14 @@
     gap: 2rem;
   }
 }
+
+@media (max-width: 548px) {
+  .title {
+    text-align: center;
+    margin-left: 0px;
+
+    &::after {
+      display: none;
+    }
+  }
+}
