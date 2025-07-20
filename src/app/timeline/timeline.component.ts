@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgClass } from '@angular/common';
 // import { trigger, transition, style, animate, state } from '@angular/animations';
 import { animate, onScroll } from 'animejs';
 
 @Component({
   selector: 'app-timeline',
   standalone: true,
-  imports: [CommonModule, NgClass],
+  imports: [CommonModule],
   templateUrl: './timeline.component.html',
   styleUrls: ['./timeline.component.scss'],
   // animations: [ 

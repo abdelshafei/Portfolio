@@ -5,13 +5,13 @@ import { TimelineComponent } from './timeline/timeline.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { AboutComponent } from './about/about.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
-import { NgIf } from '@angular/common';
+import { NgIf, NgClass } from '@angular/common';
 
 
 
 @Component({
   selector: 'app-root',
-  imports: [HomeComponent, NavComponent, TimelineComponent, ProjectsComponent, AboutComponent, ContactFormComponent, NgIf],
+  imports: [HomeComponent, NavComponent, TimelineComponent, ProjectsComponent, AboutComponent, ContactFormComponent, NgIf, NgClass],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

@@ -37,7 +37,7 @@ export class NavComponent implements OnInit {
     }
   }
 
-    lastScrollTop = 0;
+  lastScrollTop = 0;
   navHidden = false;
 
   @HostListener('window:scroll', [])

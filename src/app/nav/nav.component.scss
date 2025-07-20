@@ -16,6 +16,7 @@
   font-family: 'Segoe UI', sans-serif;
   position: fixed;
   width: 100%;
+  backdrop-filter: blur(2px);
 
   &.hide-nav {
     transform: translateY(-100%);
