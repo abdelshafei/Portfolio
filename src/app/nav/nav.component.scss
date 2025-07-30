@@ -16,7 +16,8 @@
   font-family: 'Segoe UI', sans-serif;
   position: fixed;
   width: 100%;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(3px);
+  box-shadow: -10px 10px 10px rgba(0,0,0,.5);
 
   &.hide-nav {
     transform: translateY(-100%);
@@ -146,7 +147,5 @@
     .reflinks {
       display: none;
     }
-
-
   }
 }

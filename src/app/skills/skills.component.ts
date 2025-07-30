@@ -15,7 +15,7 @@ export class SkillsComponent {
   },
   {
     label: 'C',
-    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-plain.svg',
+    src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg',
   },
   {
     label: 'C++',
