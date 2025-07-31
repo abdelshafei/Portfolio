@@ -76,13 +76,13 @@
 }
 
 .intro {
-  color:rgb(207, 218, 229);
+  color:rgb(160, 168, 177);
   text-shadow: none !important;
   font-family: "Brush Script MT", cursive;
 }
 
 .name {
-  font-family: "Brush Script MT", cursive;
+  font-family: "Snell Roundhand", cursive !important;
   font-size: 50px !important;
 }
 
@@ -107,8 +107,6 @@
 .Paragraphs span {
   font-size: 1.2rem;
   display: block;
-  margin-bottom: 0.75rem;
-  margin-left: 2rem;
 }
 
 .about {
@@ -117,19 +115,26 @@
   flex-direction: column;
   justify-content: center;
   max-width: 600px;
+  margin-bottom: 0.75rem;
+  margin-left: 2rem;
 }
 
 .interests {
-  font-family: "Times New Roman", Times, serif;
-  color: #9aceff;
+  font-family: "Impact", fantasy;
   font-size: 24px !important;
   font-weight: 600;
+  background: linear-gradient(90deg, #38bdf8, #2dd4bf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   display: inline-block;
 }
 
 .interests .cursor {
   display: inline-block;
   font-size: 28px !important;
+  background: linear-gradient(90deg, #38bdf8, #2dd4bf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   animation: blink 1s ease-in-out infinite;
   margin-left: 0rem !important;
 }
@@ -162,7 +167,7 @@
     align-items: center;
     text-decoration: none;
     cursor: pointer;
-    background-color:#d5e4eb;
+    background-color:#bceafb;
     box-shadow: 0 10px 25px rgba(45, 42, 42, 0.1);
     width: 40px;
     height: 40px;
@@ -185,7 +190,7 @@
       position: relative;
       font-size: 1rem;
       opacity: 0;
-      transition: .5s;
+      transition: opacity .3s ease;
       letter-spacing: 2px;
     }
 
@@ -307,15 +312,15 @@
     border: 0;
     text-decoration: none;
     font-size: 0.9rem;
-    color: #F2F2F2;
+    color: #f0f9ff;
     font-weight: 700;
     text-transform: uppercase;
     font-family: inherit;
 
     padding: 1em 2em;
-    border: 2px solid #3166c3;
+    border: 2px solid #3b82f6;
     border-radius: 1em;
-    background: #458bff;
+    background: #60a5fa;
     transform-style: preserve-3d;
     transition: all 175ms cubic-bezier(0, 0, 1, 1);
 
@@ -328,9 +333,9 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: #2d4d73;
+      background: #2563eb;
       border-radius: inherit;
-      box-shadow: 0 0 0 2px #2d4d73, 0 0.8em 0 0 #233c5b;
+      box-shadow: 0 0 0 2px #1e40af, 0 0.8em 0 0 #1e40af;
       transform: translate3d(0, 0.8em, -1em);
       transition: all 175ms cubic-bezier(0, 0, 1, 1);
     }

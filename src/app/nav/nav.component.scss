@@ -17,7 +17,7 @@
   position: fixed;
   width: 100%;
   backdrop-filter: blur(10px);
-  box-shadow: -10px 10px 10px rgba(0,0,0,.5);
+  box-shadow: 0px 1px 20px rgba(0,0,0,.5);
 
   &.hide-nav {
     transform: translateY(-100%);
@@ -42,8 +42,12 @@
   #Author {
     font-weight: bold;
     font-size: 2rem;
-    color: #7DD3FC;
+    color: #ffffff;
     text-decoration: none;
+
+    &:hover {
+      cursor:default;
+    }
   }
 
   .reflinks {
@@ -58,7 +62,7 @@
     }
 
     .ref {
-      color: #7DD3FC;
+      color: #ffffff;
       z-index: 2;
       text-decoration: none;
       font-family: sans-serif;
@@ -121,7 +125,7 @@
 
     span {
       height: 3px;
-      background: #7DD3FC;
+      background: #ffffff;
       border-radius: 2px;
       transition: all 0.3s ease;
     }

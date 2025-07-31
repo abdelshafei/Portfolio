@@ -24,11 +24,11 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     if (!isPlatformBrowser(this.platformId)) return;
 
     this.loadScript('https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js')
-      .then(() => this.loadScript('https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.halo.min.js'))
+      .then(() => this.loadScript('https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js'))
       .then(() => {
         const VANTA = (window as any).VANTA;
-        if (VANTA && VANTA.HALO) {
-          VANTA.HALO({
+        if (VANTA && VANTA.CLOUDS) {
+          VANTA.CLOUDS({
             el: "#vanta-bg",
             mouseControls: true,
             touchControls: true,
