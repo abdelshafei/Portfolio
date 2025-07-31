@@ -78,6 +78,12 @@
 .intro {
   color:rgb(207, 218, 229);
   text-shadow: none !important;
+  font-family: "Brush Script MT", cursive;
+}
+
+.name {
+  font-family: "Brush Script MT", cursive;
+  font-size: 50px !important;
 }
 
 .greeting .cursor {
@@ -85,8 +91,6 @@
   position: relative;
   color: #f4ea7c;
   font-weight: 500;
-  // animation: blink 1s step-end infinite;
-  font-size: 40px !important;
   margin-left: 0rem !important;
   text-shadow: 0 0px 10px #d6cd6d;
 }

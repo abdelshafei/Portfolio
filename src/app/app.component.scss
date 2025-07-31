@@ -146,3 +146,17 @@ app-nav {
   align-items: center;
   z-index: 1000;
 }
+
+.vanta-container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.main-content {
+  position: relative;
+  z-index: 1;
+}

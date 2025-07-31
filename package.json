@@ -38,7 +38,9 @@
     "rxjs": "~7.8.0",
     "tailwindcss": "^4.1.10",
     "tailwindcss-primeui": "^0.6.1",
+    "three": "^0.178.0",
     "tslib": "^2.3.0",
+    "vanta": "^0.5.24",
     "zone.js": "~0.15.0"
   },
   "devDependencies": {

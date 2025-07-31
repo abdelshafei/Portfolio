@@ -16,7 +16,7 @@
   font-family: 'Segoe UI', sans-serif;
   position: fixed;
   width: 100%;
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(10px);
   box-shadow: -10px 10px 10px rgba(0,0,0,.5);
 
   &.hide-nav {
@@ -42,7 +42,7 @@
   #Author {
     font-weight: bold;
     font-size: 2rem;
-    color: #ccd6f6;
+    color: #7DD3FC;
     text-decoration: none;
   }
 
@@ -58,7 +58,7 @@
     }
 
     .ref {
-      color: #ccd6f6;
+      color: #7DD3FC;
       z-index: 2;
       text-decoration: none;
       font-family: sans-serif;
@@ -121,7 +121,7 @@
 
     span {
       height: 3px;
-      background: #ccd6f6;
+      background: #7DD3FC;
       border-radius: 2px;
       transition: all 0.3s ease;
     }
