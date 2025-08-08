@@ -132,7 +132,29 @@
     gap: 1.5rem;
 
     & .ico {
+      position: relative;
       color: #3c3b3b;
+      background-color: transparent;
+      transition: all 0.2s ease-in-out;
+      z-index: 2;
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background-color: transparent;
+        border-radius: 50%;
+        transition: background-color 0.3s ease;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+      }
+
+      &:hover::before {
+        background-color: rgba(163, 162, 162, 0.2);
+      }
     }
   }
 }
