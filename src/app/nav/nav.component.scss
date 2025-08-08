@@ -47,6 +47,10 @@
     }
   }
 
+  .iconlinks {
+    display: none;
+  }
+
   .reflinks {
     display: flex;
     align-items: center;
@@ -56,10 +60,6 @@
       display: flex !important; // makes it visible on larger screens
       flex-direction: column;
       width: 100%;
-    }
-
-    & .ico {
-      color: #3c3b3b;
     }
 
     .ref {
@@ -119,5 +119,19 @@
 @media (max-width: 500px) {
   .NavigationBar {
     width: 200px
+  }
+
+  .reflinks {
+    display: none !important;
+  }
+
+  .iconlinks {
+    display: flex !important;
+    align-items: center;
+    gap: 1.5rem;
+
+    & .ico {
+      color: #3c3b3b;
+    }
   }
 }
