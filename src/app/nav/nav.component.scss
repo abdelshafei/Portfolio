@@ -3,10 +3,11 @@
   top: 0;
   bottom: 0;
   left: 88%;
-  width: 0.045px;
+  width: 1px;
   background-color: #959697;
-  transform: translateX(-50%);
+  transform: translate(-50%, 12%);
   z-index: 1;
+  height: 80%;
 }
 
 #sun {
@@ -14,7 +15,7 @@
   font-size: larger;
   transform: translateY(-1px);
   transform: translateX(6px);
-  transition: font-size 0.6s ease;
+  transition: font-size 0.3s ease;
 
   &:hover {
     font-size: x-large;
