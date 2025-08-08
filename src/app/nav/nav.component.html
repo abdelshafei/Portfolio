@@ -24,7 +24,14 @@
 
     <div class="line"></div>
 
-    <i class="fa-solid fa-sun" id="sun"></i>
+    <i 
+      matTooltip="Light Mode" 
+      matTooltipPosition="above" 
+      #tooltip="matTooltip"
+      (mouseenter)="onHover(tooltip)"
+      class="fa-solid fa-sun" 
+      id="sun">
+    </i> 
 
   </div>
 </nav>

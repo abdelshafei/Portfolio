@@ -1,10 +1,11 @@
-import { Component, Inject, PLATFORM_ID, HostListener, OnInit } from '@angular/core';
+import { Component, Inject, PLATFORM_ID, HostListener, OnInit, ViewChild } from '@angular/core';
 import { isPlatformBrowser, CommonModule } from '@angular/common';
 import { signal } from '@angular/core';
+import { MatTooltip } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-nav',
-  imports: [CommonModule],
+  imports: [CommonModule, MatTooltip],
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss']
 })
@@ -54,4 +55,14 @@ export class NavComponent implements OnInit {
 
     this.lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
   }
+
+  @ViewChild(MatTooltip) tooltip!: MatTooltip;
+  onHover(tooltip: MatTooltip) {
+    tooltip.show();
+
+    setTimeout(() => {
+      tooltip.hide();
+    }, 800);
+  }
+
 }
