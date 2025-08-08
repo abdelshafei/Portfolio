@@ -147,10 +147,6 @@
   padding: 2rem 3rem;
   flex-wrap: nowrap; 
   min-height: 100vh;
-  // background-image: url('../../assets/home-img.png');
-  // background-size: cover;
-  // background-position: center;
-  // background-repeat: no-repeat;
 }
 
 .links {
@@ -231,6 +227,7 @@
     padding-left: 12px;
     padding-right: 12px;
     margin-top: 20px;
+    margin-left: 0px;
     position: relative;
   }
 
@@ -362,6 +359,10 @@
 }
 
 @media (max-width: 500px) { 
+
+  .Home {
+    gap: 10px;
+  }
 
   .intro {
     font-size: 15px !important;

@@ -1,18 +1,26 @@
 <nav class="NavigationBar" [class.hide-nav]="navHidden" [class.expose-nav]="!navHidden">
   <div class="nav-content">
-    <a id="Author">Abdelrahman</a>
+    <!-- <a id="Author">Abdelrahman</a> -->
 
-    <div class="hamburger" (click)="toggleMenu()" [class.open]="menuOpen()" *ngIf="isMobile()">
+    <!-- <div class="hamburger" (click)="toggleMenu()" [class.open]="menuOpen()" *ngIf="isMobile()">
       <span></span>
       <span></span>
       <span></span>
-    </div>
+    </div> -->
 
-    <div class="reflinks" [class.show]="menuOpen()">
+    <div class="reflinks" *ngIf="!isMobile()">
       <a href="#home" class="ref">Home</a>
       <a href="#timeline" class="ref">Timeline</a>
       <a href="#projects" class="ref">Projects</a>
       <a href="#about" class="ref">About</a>
     </div>
+
+    <div class="reflinks" *ngIf="isMobile()">
+      <a href="#home" class="ico"><i class="fa-solid fa-house"></i></a>
+      <a href="#timeline" class="ico"><i class="fa-solid fa-timeline"></i></a>
+      <a href="#timeline" class="ico"><i class="fa-solid fa-screwdriver-wrench"></i></a>
+      <a href="#about" class="ico"><i class="fa-solid fa-comment-dots"></i></a>
+    </div>
+
   </div>
 </nav>

@@ -19,7 +19,7 @@ export class NavComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.isBrowser) {
-      this.isMobile.set(window.innerWidth <= 800);
+      this.isMobile.set(window.innerWidth <= 500);
     }
   }
 
@@ -30,7 +30,7 @@ export class NavComponent implements OnInit {
   @HostListener('window:resize')
   onResize(): void {
     if (this.isBrowser) {
-      this.isMobile.set(window.innerWidth <= 800);
+      this.isMobile.set(window.innerWidth <= 500);
       if (!this.isMobile()) {
         this.menuOpen.set(false); // When not mobile its set to 
       }
@@ -44,7 +44,7 @@ export class NavComponent implements OnInit {
   onWindowScroll() {
     const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (currentScroll > this.lastScrollTop && currentScroll > 300) {
+    if (currentScroll > this.lastScrollTop) {
       // Scrolling down
       this.navHidden = true;
     } else {

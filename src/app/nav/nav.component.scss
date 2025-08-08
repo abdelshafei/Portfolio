@@ -1,26 +1,23 @@
 .NavigationBar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 999;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 300;
-  font-family: 'Segoe UI', sans-serif;
+
   position: fixed;
-  width: 100%;
+  bottom: 0;
+  z-index: 999;
+  font-family: 'Segoe UI', sans-serif;
   backdrop-filter: blur(10px);
   box-shadow: 0px 1px 20px rgba(0,0,0,.5);
+  width: 480px;
+  height: 50px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  border-radius: 50px;
+  margin-bottom: 20px;
 
   &.hide-nav {
-    transform: translateY(-100%);
+    transform: translateY(100%);
     opacity: 0;
   }
 
@@ -36,7 +33,7 @@
     flex-wrap: wrap;
     gap: 2rem;
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
   }
 
   #Author {
@@ -113,43 +110,10 @@
       }
     }
   }
+}
 
-  .hamburger {
-    display: none;
-    width: 30px;
-    height: 22px;
-    flex-direction: column;
-    justify-content: space-between;
-    cursor: pointer;
-    z-index: 1000;
-
-    span {
-      height: 3px;
-      background: #ffffff;
-      border-radius: 2px;
-      transition: all 0.3s ease;
-    }
-
-    &.open span:nth-child(1) {
-      transform: translateY(9px) rotate(45deg);
-    }
-
-    &.open span:nth-child(2) {
-      opacity: 0;
-    }
-
-    &.open span:nth-child(3) {
-      transform: translateY(-9px) rotate(-45deg);
-    }
-  }
-
-  @media (max-width: 800px) {
-    .hamburger {
-      display: flex;
-    }
-
-    .reflinks {
-      display: none;
-    }
+@media (max-width: 500px) {
+  .NavigationBar {
+    width: 200px
   }
 }
