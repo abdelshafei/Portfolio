@@ -10,17 +10,27 @@
   height: 80%;
 }
 
-#sun {
-  color: #3c3b3b;
-  font-size: x-large;
-  transform: translateY(-1px);
-  transform: translateX(10px);
-  transition: font-size 0.6s ease;
+.sun-container {
+  display:inline-flex;
+  width:36px;   /* keeps layout space fixed */
+  height:36px;
+  align-items:center;
+  justify-content:center;
+  transform: translateX(7px);
+  overflow: visible;
+}
 
-  &:hover {
-    font-size: xx-large;
-    cursor: pointer;
-  }
+#sun {
+  display:inline-block;
+  color: #3c3b3b;
+  font-size:25px;           
+  transition: transform .25s ease, color .25s ease;
+  transform-origin:center;
+}
+
+.sun-container:hover #sun{
+  transform: scale(1.25); 
+  cursor: pointer;
 }
 
 .NavigationBar {
@@ -142,8 +152,12 @@
 }
 
 @media (max-width: 550px) {
-  #sun {
-    transform: translateX(2px) !important;
+  .sun-container {
+    transform: translateX(4px);
+  }
+
+  .sun-container:hover #sun{
+    transform: scale(1.2); 
   }
 
   .line {

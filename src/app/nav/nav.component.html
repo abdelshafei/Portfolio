@@ -24,14 +24,16 @@
 
     <div class="line"></div>
 
-    <i 
-      matTooltip="Light Mode" 
-      matTooltipPosition="above" 
-      #tooltip="matTooltip"
-      (mouseenter)="onHover(tooltip)"
-      class='bx  bxs-sun' 
-      id="sun">
-    </i> 
+    <div class="sun-container">
+      <i 
+        matTooltip="Light Mode" 
+        matTooltipPosition="above" 
+        #tooltip="matTooltip"
+        (mouseenter)="onHover(tooltip)"
+        class='bx  bxs-sun' 
+        id="sun">
+      </i> 
+    </div>
 
   </div>
 </nav>
