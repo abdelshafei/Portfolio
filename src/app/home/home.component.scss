@@ -123,7 +123,7 @@
   font-family: "Impact", fantasy;
   font-size: 24px !important;
   font-weight: 600;
-  background: linear-gradient(90deg, #38bdf8, #2dd4bf);
+  background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
@@ -132,7 +132,7 @@
 .interests .cursor {
   display: inline-block;
   font-size: 28px !important;
-  background: linear-gradient(90deg, #38bdf8, #2dd4bf);
+  background: #2575fc;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: blink 1s ease-in-out infinite;
