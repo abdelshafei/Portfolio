@@ -1,54 +1,57 @@
-span.hover {
-    color: #1E3A5F ;
+.hover {
+    color: #1E3A5F;
     font-size: 1.5rem;
-    transition: font-size 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+    transition: font-size .25s ease, transform .25s ease, color .25s ease, text-shadow .25s ease;
+    transform-origin: center;
+    will-change: transform;
     cursor: pointer;
     padding: 0 .06em;
+    line-height: 1em;
 
     &:hover {
         font-size: 2.5rem;
         font-synthesis: none;
         text-rendering:optimizeLegibility;   
-        text-transform: uppercase;
         color: rgb(96, 244, 244);
         text-shadow:
             1px 1px 0 #2d305e,
             2px 2px 0 #1d1c3d;
+        transform: scale(5);
     }
 
 }
 
-span.nohover {
-    // display: inline-block;
+.nohover {
     color: whitesmoke;
     pointer-events: none;
     font-size: 1rem;
     padding: 0 .06em;
-    // padding: 5px;
+    line-height: 1em;
+    width: 0.5ch;
 }
 
 @media (max-width: 625px) {
-    span.hover {
+    .hover {
         font-size: 1rem;
         &:hover {
             font-size: 2rem;
         }
     }
 
-    span.nohover {
+    .nohover {
         font-size: 1.2rem;
     }
 }
 
 @media (max-width: 425px) {
-    span.hover {
+    .hover {
         font-size: 0.7rem;
         &:hover {
             font-size: 1.3rem;
         }
     }
 
-    span.nohover {
+    .nohover {
         font-size: 1rem;
     }
 }
