@@ -40,7 +40,8 @@ span.nohover {
 
 @media (max-width: 425px) {    
     span.hover {        
-        font-size: 0.7rem;        
+        font-size: 0.7rem;   
+        transition: font-size 0.15s ease, color 0.15s ease, text-shadow 0.15s ease !important;      
         
         &:hover {            
             font-size: 1.3rem;        

@@ -163,7 +163,8 @@
     align-items: center;
     text-decoration: none;
     cursor: pointer;
-    background-color:#bceafb;
+    backdrop-filter: blur(20px);
+    // background-color:#bceafb;
     box-shadow: 0 10px 25px rgba(45, 42, 42, 0.1);
     width: 40px;
     height: 40px;
