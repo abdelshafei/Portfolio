@@ -18,7 +18,7 @@ export class TimelineComponent {
   events = [
     {
       status: 'Studying at Carleton University',
-      date: '2022',
+      date: 'Sep 2022',
       color: '#FAFAFA',
       description: `
       Studying Computer Science with a specialization in Artificial Intelligence and Machine Learning at Carleton University, I've spent the past three years immersing myself in both foundational and advanced topics. I'm currently in my final year and expect to graduate in May 2027. 
@@ -27,7 +27,7 @@ export class TimelineComponent {
     },
     {
       status: 'Undergraduate Teaching Assistant',
-      date: '2025',
+      date: 'Jan 2025',
       color: '#FAFAFA',
       description: `
       From January to April 2025, I assisted Dr. Darryl Hill in teaching COMP2404: Introduction to Software Engineering. I led weekly tutorials and office hours, helping students strengthen their understanding of C++ concepts like object-oriented programming and data structures, while also supporting assignment guidance and troubleshooting.
@@ -36,7 +36,7 @@ export class TimelineComponent {
     },
     {
       status: 'Front End Software Developer',
-      date: '2025',
+      date: 'Sep 2025',
       color: '#FAFAFA',
       description:`
       Advanced the capabilities of Ribbon Communications’ Analytics Platform by delivering production-grade features, optimizing performance paths, and resolving complex bugs tied to real-time data visualization;  contributing to a more resilient, intuitive, and high-performing product.
