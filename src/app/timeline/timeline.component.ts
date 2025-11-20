@@ -34,6 +34,15 @@ export class TimelineComponent {
       `,
       dotImg: 'https://cdn-icons-png.freepik.com/512/7527/7527819.png'
     },
+    {
+      status: 'Front End Software Developer',
+      date: '2025',
+      color: '#FAFAFA',
+      description:`
+      Advanced the capabilities of Ribbon Communications’ Analytics Platform by delivering production-grade features, optimizing performance paths, and resolving complex bugs tied to real-time data visualization;  contributing to a more resilient, intuitive, and high-performing product.
+      `,
+      dotImg: '../assets/icone-internet-gris.png'
+    }
   ];
 
 }
