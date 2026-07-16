@@ -84,7 +84,7 @@ export class TimelineComponent {
       description: `
       Engineering the distributed layer of the message spool — the guaranteed-messaging engine at the core of Solace's PubSub+ Event Broker. Evolving how events are persisted and replicated across nodes, and hardening a subsystem trusted to move mission-critical data reliably and at scale.
       `,
-      icon: 'fa-solid fa-microchip'
+      icon: 'fa-solid fa-gear'
     }
   ];
 }
