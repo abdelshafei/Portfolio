@@ -1,68 +1,62 @@
-import { Component, Inject, PLATFORM_ID, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Component, Inject, PLATFORM_ID, HostListener, AfterViewInit, OnDestroy, signal } from '@angular/core';
 import { isPlatformBrowser, CommonModule } from '@angular/common';
-import { signal } from '@angular/core';
-import { MatTooltip } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-nav',
-  imports: [CommonModule, MatTooltip],
+  imports: [CommonModule],
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss']
 })
-export class NavComponent implements OnInit {
-  menuOpen = signal(false);
-  isMobile = signal(false);
+export class NavComponent implements AfterViewInit, OnDestroy {
+  sections = [
+    { id: 'home',     label: 'Home',     icon: 'fa-solid fa-house' },
+    { id: 'timeline', label: 'Timeline', icon: 'fa-solid fa-timeline' },
+    { id: 'projects', label: 'Projects', icon: 'fa-solid fa-screwdriver-wrench' },
+    { id: 'about',    label: 'About',    icon: 'fa-solid fa-comment-dots' }
+  ];
+
+  activeSection = signal('home');
+  navHidden = false;
+
   private isBrowser: boolean;
+  private lastScrollTop = 0;
+  private sectionObserver?: IntersectionObserver;
 
   constructor(@Inject(PLATFORM_ID) platformId: Object) {
     this.isBrowser = isPlatformBrowser(platformId);
   }
 
-  ngOnInit(): void {
-    if (this.isBrowser) {
-      this.isMobile.set(window.innerWidth <= 500);
+  ngAfterViewInit(): void {
+    if (!this.isBrowser || typeof IntersectionObserver === 'undefined') return;
+
+    // Highlight the link of whichever section currently crosses the middle of the screen.
+    this.sectionObserver = new IntersectionObserver(
+      entries => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            this.activeSection.set(entry.target.id);
+          }
+        }
+      },
+      { rootMargin: '-45% 0px -45% 0px', threshold: 0 }
+    );
+
+    for (const section of this.sections) {
+      const el = document.getElementById(section.id);
+      if (el) this.sectionObserver.observe(el);
     }
   }
 
-  toggleMenu(): void {
-    this.menuOpen.set(!this.menuOpen());
+  ngOnDestroy(): void {
+    this.sectionObserver?.disconnect();
   }
-
-  @HostListener('window:resize')
-  onResize(): void {
-    if (this.isBrowser) {
-      this.isMobile.set(window.innerWidth <= 500);
-      if (!this.isMobile()) {
-        this.menuOpen.set(false); // When not mobile its set to 
-      }
-    }
-  }
-
-  lastScrollTop = 0;
-  navHidden = false;
 
   @HostListener('window:scroll', [])
-  onWindowScroll() {
+  onWindowScroll(): void {
+    if (!this.isBrowser) return;
+
     const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (currentScroll > this.lastScrollTop) {
-      // Scrolling down
-      this.navHidden = true;
-    } else {
-      // Scrolling up
-      this.navHidden = false;
-    }
-
+    this.navHidden = currentScroll > this.lastScrollTop; // hide when scrolling down
     this.lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
   }
-
-  @ViewChild(MatTooltip) tooltip!: MatTooltip;
-  onHover(tooltip: MatTooltip) {
-    tooltip.show();
-
-    setTimeout(() => {
-      tooltip.hide();
-    }, 800);
-  }
-
 }

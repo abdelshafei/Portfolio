@@ -1,4 +1,12 @@
-<div id="vanta-bg" class="vanta-container"></div>
+<div class="bg-scene" aria-hidden="true">
+  <div class="aurora aurora-1"></div>
+  <div class="aurora aurora-2"></div>
+  <div class="aurora aurora-3"></div>
+  <canvas #starCanvas class="star-canvas"></canvas>
+</div>
+
+<div class="scroll-progress" [style.width.%]="scrollProgress()" aria-hidden="true"></div>
+
 <div class="main-content">
   <div id="home">
     <app-home></app-home>
@@ -17,20 +25,24 @@
   </div>
 
   <div id="Contact-Form" class="btn">
-      <a href="#Contact-Form" class="contactBtn" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false" (click)="openContact = true">
-          <i class="fa fa-envelope" [style]="isHovered ? 'color: black;' : 'color: white;'"></i>
-          <span style="color: aliceblue">• Contact Me</span>
-      </a>
+    <a href="#Contact-Form" class="contactBtn" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false" (click)="openContact = true">
+      <i class="fa fa-envelope"></i>
+      <span>• Contact Me</span>
+    </a>
   </div>
 
   <app-nav></app-nav>
 
   <div class="footer-wrapper">
     <span class="left-foot">© {{ Year }} Abdelrahman ElShafay</span>
-    <span class="right-foot">(beta) Built with Angular19</span>
+    <span class="right-foot">Built with Angular 19</span>
   </div>
 </div>
 
-<div class="overlay" *ngIf="openContact === true">
-  <app-contact-form (close)="openContact = false"></app-contact-form>
+<div class="overlay" *ngIf="openContact === true" (click)="openContact = false">
+  <app-contact-form (click)="$event.stopPropagation()" (close)="openContact = false"></app-contact-form>
+</div>
+
+<div #bubbleCursor class="bubble-cursor" aria-hidden="true">
+  <div class="bubble-inner"></div>
 </div>

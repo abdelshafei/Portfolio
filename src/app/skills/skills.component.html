@@ -1,12 +1,27 @@
 <div class="body">
-    <h2 class="title">
+    <h2 class="title" appReveal>
         Tech Stack
     </h2>
-    <div class="icons">
-        <app-skill-icon 
-            class="icon-item" 
-            *ngFor="let skill of skills; let i = index" 
-            [skillDets]="skill">
-        </app-skill-icon>
+
+    <!-- Infinite wave marquee: two identical sets create a seamless wrap-around loop -->
+    <div class="marquee" appReveal [revealDelay]="100">
+        <div class="marquee-track">
+            <div class="wave-item"
+                 *ngFor="let skill of skills; let i = index"
+                 [style.--amp]="waveAmp(i)"
+                 [style.--delay]="waveDelay(i)"
+                 [style.--dur]="waveDur(i)">
+                <app-skill-icon [skillDets]="skill"></app-skill-icon>
+            </div>
+
+            <div class="wave-item clone"
+                 aria-hidden="true"
+                 *ngFor="let skill of skills; let i = index"
+                 [style.--amp]="waveAmp(i)"
+                 [style.--delay]="waveDelay(i)"
+                 [style.--dur]="waveDur(i)">
+                <app-skill-icon [skillDets]="skill"></app-skill-icon>
+            </div>
+        </div>
     </div>
 </div>

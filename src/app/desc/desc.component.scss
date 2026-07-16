@@ -7,7 +7,7 @@
   font-family: 'Poppins', sans-serif;
   font-size: 2rem;
   font-weight: bold;
-  color: #ccd6f6;
+  color: var(--text-strong);
   position: relative;
 
   &::after {
@@ -17,17 +17,22 @@
     width: 30%;
     height: 2px;
     margin-left: 30px;
-    background-color: #becce2;
+    background: linear-gradient(90deg, rgba(236, 248, 255, 0.6), transparent);
     border-radius: 10px;
   }
 }
 
 .desc {
     text-align: center;
-    margin-left: 100px;
-    margin-right: 100px;
     margin: 100px;
     line-height: 2.5rem;
+
+    /* words wrap as whole units — never broken mid-word */
+    .word {
+        display: inline-block;
+        white-space: nowrap;
+        margin-right: 0.35em;
+    }
 }
 
 @media (max-width: 515px) {

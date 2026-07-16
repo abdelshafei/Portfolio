@@ -1,20 +1,37 @@
 <div class="title">
-    <h2 class="label">
+    <h2 class="label" appReveal>
         Projects
     </h2>
-    <div class="info-icon">
-        <i class="fa-solid fa-circle-info"
-           matTooltip="Double-click on cards to flip!"
-           matTooltipPosition="below"
-           matTooltipShowDelay="300"
-           style="color: #ccd6f6;"
-           #tooltip="matTooltip"
-           (click)="onClick()"></i>
-    </div>
-</div>
-<div class="body-proj">
-    <div class="project-item" *ngFor="let project of projects; let i = index">
-        <app-project-card [projDetails]="project"></app-project-card>
-    </div>
 </div>
 
+<!-- Tall runway; the stage inside stays pinned while scroll drives which card is shown -->
+<div class="stage-wrapper" #stageWrapper [style.height]="wrapperHeight">
+    <div class="stage">
+        <div class="proj-slide"
+             *ngFor="let project of projects; let i = index"
+             [class.is-active]="i === activeIndex()"
+             [class.is-above]="i < activeIndex()"
+             [class.is-next]="i === activeIndex() + 1"
+             [class.is-below]="i > activeIndex() + 1">
+            <app-project-card [projDetails]="project"></app-project-card>
+        </div>
+
+        <div class="dots" role="tablist" aria-label="Projects">
+            <button *ngFor="let project of projects; let i = index"
+                    type="button"
+                    [class.on]="i === activeIndex()"
+                    (click)="goTo(i)"
+                    [attr.aria-label]="project.header"></button>
+        </div>
+
+        <div class="counter" aria-hidden="true">
+            <span class="current">{{ format(activeIndex() + 1) }}</span>
+            <span class="total">/ {{ format(projects.length) }}</span>
+        </div>
+
+        <div class="scroll-hint" [class.hidden]="activeIndex() === projects.length - 1" aria-hidden="true">
+            <i class="fa-solid fa-angles-down"></i>
+            <span>keep scrolling</span>
+        </div>
+    </div>
+</div>

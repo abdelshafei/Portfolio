@@ -1,14 +1,25 @@
 <div class="timeline-container">
-  <h2 class="desc">Experience Timeline</h2>
-  <div class="timeline">
+  <h2 class="desc" appReveal>Experience Timeline</h2>
+  <p class="branch-label" appReveal [revealDelay]="100">
+    <i class="fa-solid fa-code-branch"></i> ~/career <span class="branch">(main)</span>
+  </p>
+
+  <div class="timeline" #timelineEl>
     <div class="timeline-line"></div>
-    <div class="timeline-item" *ngFor="let event of events; let i = index" 
-         [class.left]="i % 2 === 0" [class.right]="i % 2 !== 0">  <!-- Alternates the timeline components-->
-      <div class="timeline-date"><span>{{event.date}}</span></div>
+    <div class="timeline-line-fill" [style.height.%]="fillPercent()"></div>
+
+    <div class="timeline-item" *ngFor="let event of events; let i = index"
+         [class.left]="i % 2 === 0" [class.right]="i % 2 !== 0"
+         [class.lit]="i < litCount()">
+      <div class="timeline-date"><span>{{ event.date }}</span></div>
       <div class="timeline-dot">
-        <img [src]="event.dotImg"/>
+        <i [class]="event.icon"></i>
       </div>
       <div class="timeline-content">
+        <div class="commit-line">
+          <span class="hash">{{ event.hash }}</span>
+          <span class="msg">{{ event.commit }}</span>
+        </div>
         <div class="timeline-header">
           <h3>{{ event.status }}</h3>
         </div>
@@ -18,4 +29,4 @@
       </div>
     </div>
   </div>
-</div> 
+</div>

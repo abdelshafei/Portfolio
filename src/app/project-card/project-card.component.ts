@@ -1,49 +1,38 @@
 import { Component, signal, Input, HostListener } from '@angular/core';
-import { NgIf, NgStyle } from '@angular/common'
+import { NgIf, NgFor } from '@angular/common';
 
-export interface project {
+export interface Project {
   header: string;
   description: string;
   date: string;
   skills: string;
   gitLink: string;
   ytLink: string | null;
-  img: string;
-};
-
+}
 
 @Component({
   selector: 'app-project-card',
-  imports: [NgIf],
+  imports: [NgIf, NgFor],
   templateUrl: './project-card.component.html',
   styleUrl: './project-card.component.scss'
 })
 export class ProjectCardComponent {
+  @Input() projDetails!: Project;
 
-  @Input() projDetails!: project;
   isFlipped = signal(false);
-  private lastTapTime = 0;
-  private tapTimeout: any;
 
-  @HostListener('dblclick', ['$event']) // --> Double clicks on desktops
-  flipDesk(event: Event) : void {
-    this.isFlipped.set(!this.isFlipped());
-    event.preventDefault();
+  get skillList(): string[] {
+    return this.projDetails.skills.split(',').map(s => s.trim()).filter(Boolean);
   }
 
-  @HostListener('touchend', ['$event'])
-  flipPhone(event: Event) : void {
-    const currentTime = new Date().getTime();
-    const tapLength = currentTime - this.lastTapTime;
-
-    clearTimeout(this.tapTimeout); 
-
-    if (tapLength < 500 && tapLength > 0) {
-      console.log('Double tap detected!');
-        this.isFlipped.set(!this.isFlipped());
-        event.preventDefault();
-      event.preventDefault();
+  /**
+   * On desktop the card flips on hover (pure CSS). On touch devices
+   * (no hover capability) a single tap toggles the flip instead.
+   */
+  @HostListener('click')
+  flip(): void {
+    if (typeof window !== 'undefined' && window.matchMedia('(hover: none)').matches) {
+      this.isFlipped.set(!this.isFlipped());
     }
   }
-
 }

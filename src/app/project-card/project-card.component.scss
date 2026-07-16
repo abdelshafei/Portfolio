@@ -1,160 +1,212 @@
-.card-container.flipped .card {
-  transform: rotateY(180deg);
-}
-
 .card-container {
-    perspective: 1000px;
-    // background-color: #333437;
+    perspective: 1200px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 20px;
+    border-radius: 18px;
 
     & .card {
       position: relative;
       width: 350px;
-      height: 450px; 
+      height: 450px;
       transform-style: preserve-3d;
-      transition: transform 0.6s;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-      border: 2px solid transparent;
-      border-radius: 20px;
-      background-color:#2c3e50;
+      transition: transform 0.7s cubic-bezier(0.32, 0.85, 0.35, 1.05);
+      box-shadow: 0 20px 44px rgba(2, 12, 22, 0.5);
+      border: 1px solid var(--panel-line);
+      border-radius: 18px;
+      background-color: var(--panel-bg);
 
-      &:hover {
-        border-color: #ccd6f6; // matches your light blue text
-        cursor: pointer;
+      & .card-front {
+        position: absolute;
+        inset: 0;
+        backface-visibility: hidden;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        border-radius: 18px;
+
+        /* subtle inner glow */
+        background:
+          radial-gradient(circle at 85% 0%, rgba(90, 184, 240, 0.12), transparent 45%),
+          radial-gradient(circle at 10% 100%, rgba(105, 215, 183, 0.08), transparent 45%);
+
+        & .accent-bar {
+          height: 4px;
+          width: 100%;
+          flex-shrink: 0;
+          background: linear-gradient(90deg, var(--accent-blue), var(--accent-green), var(--accent-gold));
+          opacity: 0.85;
+        }
+
+        & .header {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 1.6rem 1rem 0.5rem;
+          position: relative;
+          text-align: center;
+
+          & span {
+            font-family: 'Poppins', Georgia, serif;
+            font-size: x-large;
+            font-weight: 600;
+            color: var(--text-strong) !important;
+          }
+        }
+
+        & .desc {
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: large;
+          margin: 0.5rem 1.2rem;
+          text-align: center;
+
+          & span {
+            font-weight: 300;
+            font-size: medium;
+            line-height: 1.5;
+            color: var(--text-soft);
+          }
+        }
+
+        & .card-foot {
+          flex-shrink: 0;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 0 1.4rem 1.1rem;
+
+          & .flip-hint {
+            font-size: 0.85rem;
+            color: rgba(196, 220, 236, 0.45);
+            transition: transform .4s ease, color .4s ease;
+          }
+
+          & .date span {
+            margin: 0;
+            font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+            font-size: 0.7rem;
+            color: #9cd4f7;
+            font-style: italic;
+          }
+        }
       }
 
-
-        & .card-front{ 
-            position: absolute;
-            inset: 0;
-            backface-visibility: hidden;
-            height: 100%;
-            display: grid;
-            background-size:contain;
-            background-position: center;
-            background-repeat: no-repeat;
-
-            & .header {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin-bottom: 2rem;
-                position: relative;
-
-                & span {
-                    font-family:Georgia, 'Times New Roman', Times, serif;
-                    font-size: x-large;
-                    color: #c4cddc !important;
-                }
-            }
-
-            & .desc {
-                flex: 1;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-size: large;
-                margin: 1rem;
-                text-align: center;
-
-                & span {
-                    font-weight: 100;
-                    font-size: medium;
-                    color: #ffffff;
-                }
-            }
-
-            & .date {
-                flex-shrink: 0;
-                margin-top: auto; 
-                display: flex;
-                justify-content: flex-end;
-                align-items: end;
-                margin-right: 2rem;
-
-                & span {
-                    margin: 0;
-                    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-                    font-size: 0.7rem;
-                    color: #4bb8f7;
-                    font-style: italic;
-                }
-
-            }
-        }
-
-        & .card-back {
-            transform: rotateY(180deg);
-            position: absolute;
-            inset: 0;
-            backface-visibility: hidden;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        
+      & .card-back {
+        transform: rotateY(180deg);
+        position: absolute;
+        inset: 0;
+        backface-visibility: hidden;
+        border-radius: 18px;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 15% 10%, rgba(244, 221, 124, 0.08), transparent 45%),
+          radial-gradient(circle at 90% 95%, rgba(90, 184, 240, 0.1), transparent 45%);
+      }
     }
+}
+
+/* Flip triggers: hover on pointer devices, .flipped class (tap) on touch */
+@media (hover: hover) {
+  .card-container:hover .card {
+    transform: rotateY(180deg);
+  }
+
+  .card-container:hover .card-foot .flip-hint {
+    transform: rotate(180deg);
+    color: var(--accent-green);
+  }
+}
+
+.card-container.flipped .card {
+  transform: rotateY(180deg);
+}
+
+.card-container .card:hover {
+  border-color: rgba(244, 221, 124, 0.62);
+  cursor: pointer;
 }
 
 .links {
   display: flex;
   justify-content: center;
-  gap: 2rem;                   
-  margin-top: auto;           
+  gap: 2rem;
+  margin-top: auto;
 }
 
 .links img,
 .links svg {
   width: 48px;
   height: 48px;
-  transition: transform 0.2s ease;
+  transition: transform 0.25s ease;
+  filter: drop-shadow(0 8px 14px rgba(2, 12, 22, 0.5));
 }
 
 .links a:hover img,
 .links a:hover svg {
-  transform: scale(1.3);
+  transform: scale(1.25) rotate(-6deg);
 }
 
 .card-back {
   display: grid;
-  grid-template-rows: 1fr auto; 
+  grid-template-rows: 1fr auto;
   padding: 2rem;
 }
 
-/* skills section (fills the top zone) */
 .skills {
   display: flex;
-  flex-direction: column;      
-  justify-content: center;    
-  align-items: center;        
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  gap: 1rem;                  
+  gap: 1.2rem;
 
-  .label   { font-weight: 600; font-size: 1.1rem; color: rgb(255, 255, 255)}
-  .content { font-weight: 100; color: rgb(199, 191, 191)}
+  .label {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--accent-gold);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+
+    .chip {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-soft);
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid var(--glass-line);
+      background: var(--glass-bg);
+      transition: border-color .25s ease, color .25s ease, transform .25s ease;
+
+      &:hover {
+        border-color: rgba(105, 215, 183, 0.6);
+        color: var(--text-strong);
+        transform: translateY(-2px);
+      }
+    }
+  }
 }
 
 .github, .yt-link {
     display: inline-block;
-    
 }
 
-// .card-container:hover .card {
-//   box-shadow: 0 0 30px #ffffff;
-//   cursor: pointer;
-// }
-      
-
-@media (max-width: 800px) { 
+@media (max-width: 800px) {
     .card-container .card {
-      width: 300px; 
-      height: 406px; 
+      width: 300px;
+      height: 406px;
 
-      & .card-front .header span{
+      & .card-front .header span {
         font-size: large;
       }
 
@@ -164,12 +216,12 @@
     }
 }
 
-@media (max-width: 500px) { 
+@media (max-width: 500px) {
     .card-container .card {
-      width: 290px; 
-      height: 350px; 
+      width: 290px;
+      height: 350px;
 
-      & .card-front .header span{
+      & .card-front .header span {
         font-size: medium;
       }
 
@@ -178,4 +230,3 @@
       }
     }
 }
-

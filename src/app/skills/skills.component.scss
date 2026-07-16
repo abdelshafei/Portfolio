@@ -6,7 +6,7 @@
   font-family: 'Poppins', sans-serif;
   font-size: 2rem;
   font-weight: bold;
-  color: #ccd6f6;
+  color: var(--text-strong);
   position: relative;
 
   &::after {
@@ -16,25 +16,71 @@
     width: 30%;
     height: 2px;
     margin-left: 30px;
-    background-color: #becce2;
+    background: linear-gradient(90deg, rgba(236, 248, 255, 0.6), transparent);
     border-radius: 10px;
   }
 }
 
-.icons {
-    // height: 40vh;
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 8rem;
-    max-width: 80%;
-    margin: 0 auto;
+/* ---------- Infinite wave marquee ---------- */
+.marquee {
+  overflow: hidden;
+  width: 100%;
+  padding: 3.2rem 0 2.6rem;
+  /* icons fade out at the edges before wrapping back around */
+  mask-image: linear-gradient(90deg, transparent, black 7%, black 93%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 7%, black 93%, transparent);
 }
 
-@media (max-width: 800px) { 
-  .icons {
-    gap: 2rem;
+.marquee-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: marquee 55s linear infinite;
+  will-change: transform;
+}
+
+/* pause the drift so icons can be hovered/inspected */
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.wave-item {
+  /* spacing lives on the item (not flex gap) so -50% wraps seamlessly */
+  padding-right: 3.2rem;
+  animation: wave var(--dur, 3.2s) ease-in-out var(--delay, 0s) infinite alternate;
+  will-change: transform;
+}
+
+@keyframes wave {
+  from { transform: translateY(calc(var(--amp, 12px) * -1)); }
+  to   { transform: translateY(var(--amp, 12px)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+
+  .marquee-track {
+    animation: none;
+    width: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 1.6rem;
+  }
+
+  .wave-item {
+    animation: none;
+  }
+
+  .wave-item.clone {
+    display: none;
   }
 }
 

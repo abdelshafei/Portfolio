@@ -1,12 +1,25 @@
 .contact-modal {
-  background-color: #0f172a;
+  background-color: rgba(8, 32, 52, 0.95);
   padding: 2rem;
-  border-radius: 20px;
+  border-radius: 14px;
   width: 90%;
   height: 70%;
   color: white;
-  border: 2px solid #10b981; 
-  box-shadow: 0 0 40px rgba(16, 185, 129, 0.4);
+  border: 1px solid var(--panel-line);
+  box-shadow: 0 24px 52px rgba(2, 12, 22, 0.6);
+  animation: modal-in .3s cubic-bezier(.34, 1.3, .64, 1) both;
+}
+
+@keyframes modal-in {
+  from { opacity: 0; transform: translateY(24px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-modal { animation: none; }
+}
+
+.contact-modal {
 
   form {
     display: flex;
@@ -27,7 +40,7 @@
 
         &:focus {
             outline: none !important;
-            border-color:#10b981 !important; 
+            border-color:#7fc7f5 !important; 
         }
 
     }
@@ -35,7 +48,7 @@
     .send-btn {
       position: relative;
       padding: 0.8rem;
-      background-color: #10b981;
+      background-color: #2b8dc3;
       color: white;
       border: none;
       border-radius: 10px;
@@ -44,12 +57,12 @@
 
       &[disabled] {
         cursor:not-allowed;
-        background-color: #0b7350;
+        background-color: #216f9a;
       }
 
       &:active:not([disabled]) {
         cursor: pointer;
-        background-color: #13ce90;
+        background-color: #38a1da;
       }
     }
   }

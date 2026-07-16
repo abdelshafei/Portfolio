@@ -28,9 +28,7 @@ export class HomeComponent {
   private platformId = inject(PLATFORM_ID);
   private isBrowser = isPlatformBrowser(this.platformId);
 
-  private AuthorName: string = 'Abdelrahman ElShafay';
   displayAuthorName = signal('Abdelrahman ElShafay');
-  private indexAuthor: number = 0;
 
   private phrases = [
     'Full Stack Web Applications.',
@@ -46,9 +44,6 @@ export class HomeComponent {
   private timeoutId: number | null = null;
 
   ngOnInit(): void {
-    // this.typeNextCharAuth(); 
-    this.indexAuthor = 0;
-
     this.typeNextCharinterest();
   }
 
@@ -57,16 +52,6 @@ export class HomeComponent {
       clearTimeout(this.timeoutId);
     }
   }
-
-  // private typeNextCharAuth() {
-  //   if (this.indexAuthor < this.AuthorName.length) {
-  //     setTimeout(() => {
-  //       this.displayAuthorName.set(this.displayAuthorName() + this.AuthorName[this.indexAuthor]);
-  //       this.indexAuthor++;
-  //       this.typeNextCharAuth();
-  //     }, 100);
-  //   }
-  // }
 
   private typeNextCharinterest(): void {
     const currentPhrase = this.phrases[this.currentPhraseIndex];

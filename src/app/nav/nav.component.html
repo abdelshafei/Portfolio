@@ -1,39 +1,15 @@
 <nav class="NavigationBar" [class.hide-nav]="navHidden" [class.expose-nav]="!navHidden">
   <div class="nav-content">
-    <!-- <a id="Author">Abdelrahman</a> -->
-
-    <!-- <div class="hamburger" (click)="toggleMenu()" [class.open]="menuOpen()" *ngIf="isMobile()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div> -->
-
     <div class="reflinks">
-      <a href="#home" class="ref">Home</a>
-      <a href="#timeline" class="ref">Timeline</a>
-      <a href="#projects" class="ref">Projects</a>
-      <a href="#about" class="ref">About</a>
+      <a *ngFor="let section of sections" [href]="'#' + section.id" class="ref" [class.active]="activeSection() === section.id">
+        {{ section.label }}
+      </a>
     </div>
 
     <div class="iconlinks">
-      <a href="#home" class="ico"><i class="fa-solid fa-house"></i></a>
-      <a href="#timeline" class="ico"><i class="fa-solid fa-timeline"></i></a>
-      <a href="#projects" class="ico"><i class="fa-solid fa-screwdriver-wrench"></i></a>
-      <a href="#about" class="ico"><i class="fa-solid fa-comment-dots"></i></a>
+      <a *ngFor="let section of sections" [href]="'#' + section.id" class="ico" [class.active]="activeSection() === section.id" [attr.aria-label]="section.label">
+        <i [class]="section.icon"></i>
+      </a>
     </div>
-
-    <!-- <div class="line"></div>
-
-    <div class="sun-container">
-      <i 
-        matTooltip="Light Mode" 
-        matTooltipPosition="above" 
-        #tooltip="matTooltip"
-        (mouseenter)="onHover(tooltip)"
-        class='bx  bxs-sun' 
-        id="sun">
-      </i> 
-    </div> -->
-
   </div>
 </nav>

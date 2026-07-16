@@ -1,54 +1,59 @@
-span.hover {      
-    color: #1E3A5F ;    
-    font-size: 1.5rem;      
-    transition: font-size 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;    
-    cursor: pointer;    
-    padding: 0 .02em;    
-    
-    &:hover {              
-        font-size: 2.5rem;        
-        font-synthesis: none;        
-        text-rendering:optimizeLegibility;           
-        text-transform: uppercase;        
-        color: rgb(96, 244, 244);        
-        text-shadow: 
-            1px 1px 0 #2d305e,            
-            2px 2px 0 #1d1c3d;    
-        }
-}
-        
-span.nohover {   
-    color: whitesmoke;    
-    pointer-events: none;    
-    font-size: 1rem;    
-    padding: 0 .06em;  
-}
+span.hover {
+    display: inline-block; /* required for transform */
+    color: var(--text-soft);
+    font-size: 1.35rem;
+    transition: transform 0.25s ease, color 0.25s ease, text-shadow 0.25s ease;
+    cursor: default;
+    padding: 0 .02em;
+    will-change: transform;
 
-@media (max-width: 625px) {    
-    span.hover {        
-        font-size: 1rem;        
-        
-        &:hover {            
-            font-size: 2rem;        
-        }    
-    }    
-    
-    span.nohover {        
-        font-size: 1.2rem;    
+    /*
+     * Grown via transform (not font-size) so the layout never shifts:
+     * changing font-size reflowed the line, moved the letter out from
+     * under the cursor, and caused an infinite hover/unhover flicker.
+     */
+    &:hover {
+        transform: scale(1.65) translateY(-3px);
+        position: relative;
+        z-index: 1;
+        color: var(--accent-green);
+        text-shadow: 0 0 14px rgba(105, 215, 183, 0.55);
+        text-transform: capitalize;
+        cursor: pointer;
     }
 }
 
-@media (max-width: 425px) {    
-    span.hover {        
-        font-size: 0.7rem;   
-        transition: font-size 0.15s ease, color 0.15s ease, text-shadow 0.15s ease !important;      
-        
-        &:hover {            
-            font-size: 1.3rem;        
-        }    
-    }    
-    
-    span.nohover {        
-        font-size: 1rem;    
+span.nohover {
+    color: var(--text-soft);
+    pointer-events: none;
+    font-size: 1rem;
+    padding: 0 .06em;
+}
+
+@media (max-width: 625px) {
+    span.hover {
+        font-size: 1rem;
+
+        &:hover {
+            transform: scale(1.55) translateY(-2px);
+        }
+    }
+
+    span.nohover {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 425px) {
+    span.hover {
+        font-size: 0.7rem;
+
+        &:hover {
+            transform: scale(1.5) translateY(-2px);
+        }
+    }
+
+    span.nohover {
+        font-size: 1rem;
     }
 }

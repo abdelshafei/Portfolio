@@ -1,14 +1,31 @@
 import { Component } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { SkillIconComponent } from '../skill-icon/skill-icon.component';
+import { RevealDirective } from '../shared/reveal.directive';
 
 @Component({
   selector: 'app-skills',
-  imports: [NgFor, SkillIconComponent],
+  imports: [NgFor, SkillIconComponent, RevealDirective],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss'
 })
 export class SkillsComponent {
+
+  /** Bob amplitude — varies per icon so the row ripples unevenly. */
+  waveAmp(i: number): string {
+    return `${8 + (i * 7) % 24}px`;
+  }
+
+  /** Negative delay phase-shifts each icon, producing a traveling-wave look. */
+  waveDelay(i: number): string {
+    return `${-(i * 0.28)}s`;
+  }
+
+  /** Slight duration variance keeps the motion organic. */
+  waveDur(i: number): string {
+    return `${3 + (i % 5) * 0.18}s`;
+  }
+
   skills = [{
     label: 'Python',
     src: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg',
@@ -94,5 +111,4 @@ export class SkillsComponent {
     src: 'https://rust-lang.org/logos/rust-logo-512x512.png'
   }
   ];
-
 }

@@ -4,28 +4,98 @@
 
 html {
   scroll-behavior: smooth;
-  
+
   @include mat.theme((
     color: (
-      theme-type: light,
+      theme-type: dark,
       primary: mat.$azure-palette,
       tertiary: mat.$blue-palette,
     ),
     typography: Roboto,
     density: 0,
   ));
-}body {
+}
+
+:root {
+  --bg-top: #0c2136;
+  --bg-mid: #0a1c2f;
+  --bg-bottom: #060f1c;
+  --ink-strong: #eaf6ff;
+  --ink-soft: #b7d3e6;
+  --glass-bg: rgba(148, 210, 255, 0.07);
+  --glass-line: rgba(158, 216, 255, 0.28);
+  --panel-bg: rgba(10, 36, 58, 0.72);
+  --panel-line: rgba(140, 200, 240, 0.3);
+  --text-strong: #f2fbff;
+  --text-soft: #c4dcec;
+  --accent-gold: #f4dd7c;
+  --accent-green: #69d7b7;
+  --accent-blue: #5ab8f0;
+}
+
+body {
   margin: 0;
   padding: 0;
-  background-color:#68b8d7  !important; // or your brand color
-  // background-color: none !important;
-  // color: #000 !important;
+  background: linear-gradient(170deg, var(--bg-top) 0%, var(--bg-mid) 45%, var(--bg-bottom) 100%) !important;
+  color: var(--text-strong);
 }
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; overflow-x: hidden;}
+body { margin: 0; font-family: "Trebuchet MS", "Segoe UI", sans-serif; overflow-x: hidden; }
+
+::selection {
+  background: rgba(105, 215, 183, 0.35);
+  color: var(--text-strong);
+}
+
+/* The air-bubble replaces the native cursor (set from TS only on fine pointers) */
+body.bubble-active,
+body.bubble-active * {
+  cursor: none !important;
+}
+
+/* No scrollbar anywhere — the top progress bar shows position instead */
+html {
+  scrollbar-width: none;      /* Firefox */
+  -ms-overflow-style: none;   /* legacy Edge/IE */
+}
 
 ::-webkit-scrollbar {
-  width: 0px;
-  background: transparent; /* make scrollbar transparent */
+  width: 0;
+  height: 0;
+  display: none;              /* Chrome, Safari, Edge */
+}
+
+/* Anchor targets breathe under the fixed nav */
+#home, #timeline, #projects, #about {
+  scroll-margin-top: 20px;
+}
+
+/* ---------- Scroll-reveal utilities (used with the appReveal directive) ---------- */
+.reveal {
+  opacity: 0;
+  transition: opacity 0.7s ease, transform 0.8s cubic-bezier(0.22, 0.9, 0.3, 1.05);
+  will-change: opacity, transform;
+}
+
+.reveal-up    { transform: translateY(42px); }
+.reveal-left  { transform: translateX(-56px); }
+.reveal-right { transform: translateX(56px); }
+.reveal-zoom  { transform: translateY(24px) scale(0.92); }
+
+.reveal.revealed {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
 }

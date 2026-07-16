@@ -1,8 +1,4 @@
-<div class="sunshine-wrapper">
-    <img [src]="skillDets.src"
-         [matTooltip]="skillDets.label"
-         matTooltipPosition="above"
-         [matTooltipShowDelay]="2000"
-         #tooltip="matTooltip"
-         (click)="onClick()"/>
+<div class="skill-wrapper">
+    <img [src]="skillDets.src" [alt]="skillDets.label" loading="lazy" />
+    <span class="skill-label">{{ skillDets.label }}</span>
 </div>
