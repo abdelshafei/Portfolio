@@ -40,7 +40,13 @@
 </div>
 
 <div class="overlay" *ngIf="openContact === true" (click)="openContact = false">
-  <app-contact-form (click)="$event.stopPropagation()" (close)="openContact = false"></app-contact-form>
+  <!-- deferred: Material form code stays out of the initial bundle,
+       fetched only the first time the contact form opens -->
+  @defer (when openContact) {
+    <app-contact-form (click)="$event.stopPropagation()" (close)="openContact = false"></app-contact-form>
+  } @placeholder {
+    <div class="modal-loading" aria-hidden="true"></div>
+  }
 </div>
 
 <div #bubbleCursor class="bubble-cursor" aria-hidden="true">

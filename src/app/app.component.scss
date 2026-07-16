@@ -211,6 +211,20 @@ app-nav {
   to   { opacity: 1; }
 }
 
+/* shown for the instant the deferred contact-form chunk is fetched */
+.modal-loading {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 3px solid rgba(158, 216, 255, 0.25);
+  border-top-color: var(--accent-green);
+  animation: modal-spin .8s linear infinite;
+}
+
+@keyframes modal-spin {
+  to { transform: rotate(360deg); }
+}
+
 /* ---------- Air-bubble cursor ---------- */
 .bubble-cursor {
   position: fixed;

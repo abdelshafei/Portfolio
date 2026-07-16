@@ -1,12 +1,11 @@
 import { Component, signal, inject } from '@angular/core';
 import { isPlatformBrowser, NgClass } from '@angular/common';
 import { PLATFORM_ID } from '@angular/core';
-import { MatTooltipModule } from '@angular/material/tooltip';
 import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-home',
-  imports: [ MatTooltipModule, NgClass ],
+  imports: [ NgClass ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   animations: [
