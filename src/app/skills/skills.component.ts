@@ -11,19 +11,48 @@ import { RevealDirective } from '../shared/reveal.directive';
 })
 export class SkillsComponent {
 
-  /** Bob amplitude — varies per icon so the row ripples unevenly. */
-  waveAmp(i: number): string {
-    return `${8 + (i * 7) % 24}px`;
+  /**
+   * Deterministic pseudo-random per icon (seeded by index) — stable between
+   * server render and browser so hydration never mismatches.
+   */
+  private rand(i: number, salt: number): number {
+    const x = Math.sin(i * 127.1 + salt * 311.7) * 43758.5453;
+    return x - Math.floor(x);
   }
 
-  /** Negative delay phase-shifts each icon, producing a traveling-wave look. */
-  waveDelay(i: number): string {
-    return `${-(i * 0.28)}s`;
+  /** Horizontal crossing time: 26s – 60s. */
+  xDur(i: number): string {
+    return `${(26 + this.rand(i, 1) * 34).toFixed(1)}s`;
   }
 
-  /** Slight duration variance keeps the motion organic. */
-  waveDur(i: number): string {
-    return `${3 + (i % 5) * 0.18}s`;
+  /** Negative delay scatters icons across the width instead of starting at the edge. */
+  xDelay(i: number): string {
+    return `${(-this.rand(i, 2) * 60).toFixed(1)}s`;
+  }
+
+  /** ~40% of icons travel right-to-left. */
+  xDir(i: number): string {
+    return this.rand(i, 3) < 0.4 ? 'reverse' : 'normal';
+  }
+
+  /** Vertical baseline within the field. */
+  topPos(i: number): string {
+    return `${(12 + this.rand(i, 4) * 60).toFixed(1)}%`;
+  }
+
+  /** Wave amplitude: 12px – 52px, unique per icon. */
+  yAmp(i: number): string {
+    return `${(12 + this.rand(i, 5) * 40).toFixed(0)}px`;
+  }
+
+  /** Wave half-period: 2.2s – 5.4s. */
+  yDur(i: number): string {
+    return `${(2.2 + this.rand(i, 6) * 3.2).toFixed(2)}s`;
+  }
+
+  /** Random wave phase. */
+  yDelay(i: number): string {
+    return `${(-this.rand(i, 7) * 6).toFixed(2)}s`;
   }
 
   skills = [{

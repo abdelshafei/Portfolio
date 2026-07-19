@@ -34,7 +34,9 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(170deg, var(--bg-top) 0%, var(--bg-mid) 45%, var(--bg-bottom) 100%) !important;
+  /* solid base — the gradient lives on the fixed .bg-scene layer so it
+     renders exactly once instead of tiling down the page */
+  background: var(--bg-bottom) !important;
   color: var(--text-strong);
 }
 

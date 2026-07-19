@@ -3,23 +3,19 @@
         Tech Stack
     </h2>
 
-    <!-- Infinite wave marquee: two identical sets create a seamless wrap-around loop -->
-    <div class="marquee" appReveal [revealDelay]="100">
-        <div class="marquee-track">
-            <div class="wave-item"
-                 *ngFor="let skill of skills; let i = index"
-                 [style.--amp]="waveAmp(i)"
-                 [style.--delay]="waveDelay(i)"
-                 [style.--dur]="waveDur(i)">
-                <app-skill-icon [skillDets]="skill"></app-skill-icon>
-            </div>
-
-            <div class="wave-item clone"
-                 aria-hidden="true"
-                 *ngFor="let skill of skills; let i = index"
-                 [style.--amp]="waveAmp(i)"
-                 [style.--delay]="waveDelay(i)"
-                 [style.--dur]="waveDur(i)">
+    <!-- Free-floating field: every icon crosses the section on its own path,
+         with its own speed, direction, baseline, and wave amplitude -->
+    <div class="float-field" appReveal [revealDelay]="100">
+        <div class="float-x"
+             *ngFor="let skill of skills; let i = index"
+             [style.top]="topPos(i)"
+             [style.--x-dur]="xDur(i)"
+             [style.--x-delay]="xDelay(i)"
+             [style.--x-dir]="xDir(i)">
+            <div class="float-y"
+                 [style.--y-amp]="yAmp(i)"
+                 [style.--y-dur]="yDur(i)"
+                 [style.--y-delay]="yDelay(i)">
                 <app-skill-icon [skillDets]="skill"></app-skill-icon>
             </div>
         </div>
