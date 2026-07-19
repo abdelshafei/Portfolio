@@ -41,8 +41,15 @@ export class AppComponent implements AfterViewInit, OnDestroy {
 
   /* ---------- Bubble cursor state ---------- */
   private bubbleEnabled = false;
-  private mouse = { x: -100, y: -100, lastMoveAt: 0, inWindow: false, down: false, overInteractive: false };
-  private bubble = { x: -100, y: -100, vx: 0, vy: 0, pressScale: 1, hoverScale: 1, buoy: 0 };
+  private mouse = { x: -100, y: -100, lastMoveAt: 0, inWindow: false, down: false, overInteractive: false, overText: false };
+  private bubble = {
+    x: -100, y: -100, vx: 0, vy: 0,
+    pressScale: 1, hoverScale: 1, buoy: 0,
+    dx: 0, dy: 0, dvx: 0, dvy: 0,  // deformation as a springy 2D vector
+    angle: 0                        // orientation derived from the vector
+  };
+  private trailCount = 0;
+  private lastTrailAt = 0;
   private lastFrameTime = 0;
   private removeListeners: Array<() => void> = [];
 
@@ -133,7 +140,10 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     on('mouseenter', () => (this.mouse.inWindow = true));
     on('mouseover', (e: MouseEvent) => {
       const target = e.target as HTMLElement | null;
-      this.mouse.overInteractive = !!target?.closest('a, button, input, textarea, [role="button"], .hover, app-project-card, app-skill-icon');
+      // Over the About-me letters the bubble condenses to a dot instead of growing.
+      this.mouse.overText = !!target?.closest('app-letter');
+      this.mouse.overInteractive = !this.mouse.overText &&
+        !!target?.closest('a, button, input, textarea, [role="button"], app-project-card, app-skill-icon');
     });
   }
 
@@ -143,48 +153,106 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     const b = this.bubble;
     const m = this.mouse;
 
-    // --- Spring-damper follow: the bubble is dragged through "water" toward the pointer
-    const stiffness = 170;
-    const damping = 16;
+    // --- Spring-damper follow: near-critically damped so the bubble glides to
+    //     a halt without rubber-banding past the pointer on sudden stops
+    const stiffness = 200;
+    const damping = 25;
     b.vx += ((m.x - b.x) * stiffness - b.vx * damping) * dt;
     b.vy += ((m.y - b.y) * stiffness - b.vy * damping) * dt;
     b.x += b.vx * dt;
     b.y += b.vy * dt;
 
+    const speed = Math.hypot(b.vx, b.vy);
+
+    // --- Jelly deformation as a 2D vector spring. The target points along the
+    //     current velocity; on a direction reversal the vector passes through
+    //     zero — the bulge flattens out and regrows on the new trailing side,
+    //     instead of rotating through the bottom.
+    const mag = Math.min(speed / 1100, 0.45);
+    const tx = speed > 1 ? (b.vx / speed) * mag : 0;
+    const ty = speed > 1 ? (b.vy / speed) * mag : 0;
+    const dk = 130;   // deform spring stiffness
+    const dd = 18;    // close to critical damping (~22.8) -> gentle settle
+    b.dvx += ((tx - b.dx) * dk - b.dvx * dd) * dt;
+    b.dvy += ((ty - b.dy) * dk - b.dvy * dd) * dt;
+    b.dx += b.dvx * dt;
+    b.dy += b.dvy * dt;
+
+    const deform = Math.min(Math.hypot(b.dx, b.dy), 0.5);
+    if (deform > 0.015) {
+      b.angle = Math.atan2(b.dy, b.dx); // orientation comes straight from the vector
+    }
+
+    // stretch along the deformation axis, squash across it (area preserved)
+    const stretch = 1 + deform * 0.65;
+    const squash = 1 / stretch;
+
     // --- Buoyancy: after a moment of stillness, the bubble gently floats upward and bobs
     const idle = (performance.now() - m.lastMoveAt) / 1000;
-    const targetBuoy = idle > 1.1 ? Math.min((idle - 1.1) * 9, 20) : 0;
+    const targetBuoy = idle > 1.1 ? Math.min((idle - 1.1) * 9, 22) : 0;
     b.buoy += (targetBuoy - b.buoy) * 2.5 * dt;
     const bob = b.buoy > 0.5 ? Math.sin(time / 620) * 2.6 : 0;
     const sway = b.buoy > 0.5 ? Math.sin(time / 900) * 2 : 0;
 
-    // --- Press squish + hover grow (both smoothed like tiny springs)
-    const pressTarget = m.down ? 0.72 : 1;
+    // --- Press squish + hover grow/shrink (smoothed like tiny springs).
+    //     Over the about-me letters the bubble condenses to a small dot so
+    //     the letters being hovered stay clearly visible.
+    const pressTarget = m.down ? 0.7 : 1;
     b.pressScale += (pressTarget - b.pressScale) * 14 * dt;
-    const hoverTarget = m.overInteractive ? 1.55 : 1;
-    b.hoverScale += (hoverTarget - b.hoverScale) * 10 * dt;
+    const hoverTarget = m.overText ? 0.38 : (m.overInteractive ? 1.45 : 1);
+    b.hoverScale += (hoverTarget - b.hoverScale) * 12 * dt;
 
-    // --- Velocity deformation: stretch along the direction of travel, squash across it
-    const speed = Math.hypot(b.vx, b.vy);
-    const stretch = 1 + Math.min(speed / 1500, 0.42);
-    const squash = 1 / stretch;
-    const angle = speed > 20 ? Math.atan2(b.vy, b.vx) : 0;
+    // --- Idle breathing: slow soft pulse when resting
+    const breathe = speed < 60 ? 1 + Math.sin(time / 800) * 0.03 : 1;
 
-    // --- Idle wobble: a soft, slow shape oscillation like surface tension settling
-    const wobble = speed < 60 ? 1 + Math.sin(time / 300) * 0.025 : 1;
-
-    const base = b.pressScale * b.hoverScale;
+    const base = b.pressScale * b.hoverScale * breathe;
     const el = this.bubbleCursor.nativeElement;
-    const half = 14;
+    const half = 20;
 
     el.style.opacity = m.inWindow ? '1' : '0';
+    el.classList.toggle('dot-mode', m.overText);
     el.style.transform =
       `translate(${(b.x + sway - half).toFixed(2)}px, ${(b.y - b.buoy + bob - half).toFixed(2)}px) ` +
-      `rotate(${angle}rad) scale(${(stretch * base * wobble).toFixed(3)}, ${(squash * base * (2 - wobble)).toFixed(3)})`;
+      `rotate(${b.angle}rad) scale(${(stretch * base).toFixed(3)}, ${(squash * base).toFixed(3)})`;
 
-    // keep the highlight upright while the bubble rotates with its velocity
+    // --- Asymmetric bulge: a bubble pushed through fluid flattens at its
+    //     leading face and bulges at the rear. The element is rotated so +x
+    //     is the direction of travel: shrink the front radii, grow the rear.
+    //     deformVel adds a slight vertical shimmer while the jelly settles.
+    const d = deform;
+    const front = Math.max(50 - d * 16, 38);
+    const rear = Math.min(50 + d * 9, 57);
+    // shimmer follows how fast the deformation is changing along its own axis
+    const deformRate = b.dvx * Math.cos(b.angle) + b.dvy * Math.sin(b.angle);
+    const shimmer = Math.max(Math.min(deformRate * 4, 4.5), -4.5);
     const inner = el.firstElementChild as HTMLElement | null;
-    if (inner) inner.style.transform = `rotate(${-angle}rad)`;
+    if (inner) {
+      inner.style.borderRadius =
+        `${rear}% ${front}% ${front}% ${rear}% / ` +
+        `${50 + shimmer}% ${50 - shimmer}% ${50 + shimmer}% ${50 - shimmer}%`;
+    }
+
+    // --- Trail: fast movement sheds tiny bubbles that float up and pop
+    if (speed > 550 && time - this.lastTrailAt > 70 && this.trailCount < 10) {
+      this.lastTrailAt = time;
+      this.spawnTrailBubble(b.x, b.y);
+    }
+  }
+
+  private spawnTrailBubble(x: number, y: number): void {
+    const dot = document.createElement('div');
+    dot.className = 'bubble-trail';
+    const size = 4 + Math.random() * 7;
+    dot.style.width = `${size}px`;
+    dot.style.height = `${size}px`;
+    dot.style.left = `${x + (Math.random() - 0.5) * 18}px`;
+    dot.style.top = `${y + (Math.random() - 0.5) * 18}px`;
+    document.body.appendChild(dot);
+    this.trailCount++;
+    setTimeout(() => {
+      dot.remove();
+      this.trailCount--;
+    }, 750);
   }
 
   /* ================= Starfield ================= */

@@ -52,6 +52,23 @@ body.bubble-active * {
   cursor: none !important;
 }
 
+/* tiny bubbles shed by the cursor at speed (appended to <body> from TS) */
+.bubble-trail {
+  position: fixed;
+  border-radius: 50%;
+  border: 1px solid rgba(200, 235, 255, 0.55);
+  background: radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.5), rgba(158, 216, 255, 0.08));
+  pointer-events: none;
+  z-index: 2999;
+  animation: trail-pop .75s ease-out forwards;
+}
+
+@keyframes trail-pop {
+  0%   { opacity: 0.9; transform: translateY(0) scale(1); }
+  70%  { opacity: 0.5; }
+  100% { opacity: 0; transform: translateY(-26px) scale(0.25); }
+}
+
 /* No scrollbar anywhere — the top progress bar shows position instead */
 html {
   scrollbar-width: none;      /* Firefox */
