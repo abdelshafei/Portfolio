@@ -20,9 +20,14 @@ export class SkillsComponent {
     return x - Math.floor(x);
   }
 
-  /** Horizontal crossing time: 26s – 60s. */
+  /**
+   * Horizontal crossing time: 8s – 68s. Squaring the random skews the
+   * distribution so a few icons zip across while most drift lazily —
+   * a clearly visible speed spread.
+   */
   xDur(i: number): string {
-    return `${(26 + this.rand(i, 1) * 34).toFixed(1)}s`;
+    const r = this.rand(i, 1);
+    return `${(8 + (1 - r * r) * 60).toFixed(1)}s`;
   }
 
   /** Negative delay scatters icons across the width instead of starting at the edge. */
