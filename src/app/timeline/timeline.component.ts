@@ -70,7 +70,7 @@ export class TimelineComponent {
       status: 'Front End Software Developer Intern',
       date: 'Sep 2025',
       hash: '9b81e02',
-      commit: 'feat(frontend): intern @ Ribbon',
+      commit: 'feat(frontend): intern @ Ribbon Communications',
       description: `
       Advanced the capabilities of Ribbon Communications' Analytics Platform by delivering production-grade features, optimizing performance paths, and resolving complex bugs tied to real-time data visualization; contributing to a more resilient, intuitive, and high-performing product.
       `,
@@ -80,9 +80,9 @@ export class TimelineComponent {
       status: 'Systems Software Developer Intern',
       date: 'Jan 2026',
       hash: 'a3f2c1d',
-      commit: 'feat(systems): distributed messaging @ Solace',
+      commit: 'feat(systems): intern @ Solace',
       description: `
-      Engineering the distributed layer of the message spool — the guaranteed-messaging engine at the core of Solace's PubSub+ Event Broker. Evolving how events are persisted and replicated across nodes, and hardening a subsystem trusted to move mission-critical data reliably and at scale.
+      Engineered the distributed layer of the message spool — the guaranteed-messaging engine at the core of Solace's PubSub+ Event Broker. Evolving how events are persisted and replicated across nodes, and hardening a subsystem trusted to move mission-critical data reliably and at scale.
       `,
       icon: 'fa-solid fa-gear'
     }
