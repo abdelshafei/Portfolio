@@ -147,6 +147,10 @@ export class SkillsComponent {
   {
     label: 'Tcl',
     src: 'https://www.svgrepo.com/show/374119/tcl.svg'
+  },
+  {
+    label: 'Perfetto',
+    src: './assets/perfetto.png'
   }
   ];
 }
