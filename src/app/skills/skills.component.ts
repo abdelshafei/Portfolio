@@ -143,6 +143,10 @@ export class SkillsComponent {
   {
     label: 'Rust',
     src: 'https://rust-lang.org/logos/rust-logo-512x512.png'
+  },
+  {
+    label: 'Tcl',
+    src: 'https://www.svgrepo.com/show/374119/tcl.svg'
   }
   ];
 }
