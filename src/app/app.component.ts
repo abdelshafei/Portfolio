@@ -51,6 +51,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   private trailCount = 0;
   private lastTrailAt = 0;
   private lastFrameTime = 0;
+  private hasHover = false;   // true only on devices with a real hovering pointer
   private removeListeners: Array<() => void> = [];
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object, private zone: NgZone) {
@@ -61,6 +62,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     if (!this.isBrowser || !this.starCanvas) return;
 
     this.reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.hasHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
     const canvas = this.starCanvas.nativeElement;
     this.ctx = canvas.getContext('2d');
@@ -103,8 +105,14 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   @HostListener('window:mousemove', ['$event'])
   onMouseMove(event: MouseEvent): void {
     if (!this.isBrowser) return;
-    this.pointer.x = event.clientX / window.innerWidth;
-    this.pointer.y = event.clientY / window.innerHeight;
+
+    // Only let the pointer steer the starfield parallax on real hovering
+    // devices — on touchscreens a tap emits a synthetic mousemove that would
+    // otherwise snap the stars to the tap point.
+    if (this.hasHover) {
+      this.pointer.x = event.clientX / window.innerWidth;
+      this.pointer.y = event.clientY / window.innerHeight;
+    }
 
     this.mouse.x = event.clientX;
     this.mouse.y = event.clientY;
@@ -287,8 +295,9 @@ export class AppComponent implements AfterViewInit, OnDestroy {
 
     ctx.clearRect(0, 0, width, height);
 
-    const offsetX = (this.pointer.x - 0.5) * 30;
-    const offsetY = (this.pointer.y - 0.5) * 30;
+    // no pointer parallax without a hovering pointer (mobile stays centered)
+    const offsetX = this.hasHover ? (this.pointer.x - 0.5) * 30 : 0;
+    const offsetY = this.hasHover ? (this.pointer.y - 0.5) * 30 : 0;
 
     for (const star of this.stars) {
       if (!this.reducedMotion) {
